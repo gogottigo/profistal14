@@ -40,7 +40,7 @@ const advantages = [
   "Изготовление по индивидуальным размерам",
   "Собственное производство",
   "Доставка и монтаж",
-  "Изготовление от идеи до готового изделия",
+  "От идеи до готового изделия",
 ];
 ---
 
@@ -51,38 +51,38 @@ const advantages = [
     <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
-      content="ПрофиСталь 14 — изготовление изделий и конструкций из металла на заказ."
+      content="ПрофиСталь 14 — изготовление изделий и конструкций из металла на заказ в Якутске."
     />
     <title>ПрофиСталь 14 — изделия из металла на заказ</title>
   </head>
 
-  <body class="bg-zinc-950 text-white antialiased">
+  <body class="bg-brand-bg text-brand-text antialiased">
 
     <!-- HEADER -->
-    <header class="absolute top-0 left-0 z-50 w-full">
+    <header class="absolute left-0 top-0 z-50 w-full">
       <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
 
         <a href="/" class="group">
           <div class="text-xl font-black tracking-tight">
-            ПРОФИ<span class="text-orange-500">СТАЛЬ</span>
-            <span class="ml-1 text-sm font-bold text-zinc-400">14</span>
+            ПРОФИ<span class="text-brand-accent">СТАЛЬ</span>
+            <span class="ml-1 text-sm font-bold text-brand-muted">14</span>
           </div>
 
-          <div class="mt-0.5 text-[9px] uppercase tracking-[0.25em] text-zinc-500">
+          <div class="mt-0.5 text-[9px] uppercase tracking-[0.25em] text-brand-muted">
             От идеи до реализации
           </div>
         </a>
 
-        <nav class="hidden items-center gap-8 text-sm font-medium text-zinc-300 md:flex">
-          <a href="#catalog" class="transition hover:text-white">Изделия</a>
-          <a href="#works" class="transition hover:text-white">Работы</a>
-          <a href="#about" class="transition hover:text-white">О компании</a>
-          <a href="#contacts" class="transition hover:text-white">Контакты</a>
+        <nav class="hidden items-center gap-8 text-sm font-medium text-brand-muted md:flex">
+          <a href="#catalog" class="transition hover:text-brand-text">Изделия</a>
+          <a href="#works" class="transition hover:text-brand-text">Работы</a>
+          <a href="#about" class="transition hover:text-brand-text">О компании</a>
+          <a href="#contacts" class="transition hover:text-brand-text">Контакты</a>
         </nav>
 
         <a
           href="#order"
-          class="rounded-full bg-orange-500 px-5 py-2.5 text-sm font-bold text-black transition hover:bg-orange-400"
+          class="rounded-full bg-brand-accent px-5 py-2.5 text-sm font-bold text-white transition hover:bg-brand-accent-dark"
         >
           Заказать
         </a>
@@ -94,31 +94,29 @@ const advantages = [
     <!-- HERO -->
     <main>
 
-      <section class="relative flex min-h-screen items-center overflow-hidden">
+      <section class="relative flex min-h-screen items-center overflow-hidden bg-brand-bg">
 
-        <!-- Background -->
-        <div class="absolute inset-0 bg-zinc-950"></div>
+        <!-- Decorative background -->
+        <div class="pointer-events-none absolute inset-0">
+          <div
+            class="absolute right-0 top-0 h-full w-1/2 opacity-40"
+            style="
+              background-image:
+                linear-gradient(rgba(139,94,60,.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139,94,60,.06) 1px, transparent 1px);
+              background-size: 70px 70px;
+            "
+          ></div>
 
-        <!-- Decorative grid -->
-        <div
-          class="absolute inset-0 opacity-[0.08]"
-          style="
-            background-image:
-              linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
-            background-size: 80px 80px;
-          "
-        ></div>
-
-        <!-- Orange glow -->
-        <div class="absolute -right-40 top-1/4 h-[500px] w-[500px] rounded-full bg-orange-600/10 blur-[140px]"></div>
+          <div class="absolute -right-40 top-1/4 h-[500px] w-[500px] rounded-full bg-brand-accent/10 blur-[140px]"></div>
+        </div>
 
         <div class="relative mx-auto w-full max-w-7xl px-6 py-32 lg:px-8">
 
           <div class="max-w-4xl">
 
-            <div class="mb-7 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-              <span class="h-px w-10 bg-orange-500"></span>
+            <div class="mb-7 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.25em] text-brand-accent">
+              <span class="h-px w-10 bg-brand-accent"></span>
               Изделия из металла
             </div>
 
@@ -126,10 +124,10 @@ const advantages = [
               МЕТАЛЛ,
               <br />
               КОТОРЫЙ
-              <span class="text-orange-500">РАБОТАЕТ.</span>
+              <span class="text-brand-accent">РАБОТАЕТ.</span>
             </h1>
 
-            <p class="mt-8 max-w-xl text-lg leading-relaxed text-zinc-400">
+            <p class="mt-8 max-w-xl text-lg leading-relaxed text-brand-muted">
               Изготавливаем изделия и конструкции из металла
               по вашим размерам и проектам — от небольшой
               детали до комплексного объекта.
@@ -138,14 +136,14 @@ const advantages = [
             <div class="mt-10 flex flex-wrap gap-4">
               <a
                 href="#catalog"
-                class="rounded-full bg-orange-500 px-7 py-4 font-bold text-black transition hover:bg-orange-400"
+                class="rounded-full bg-brand-accent px-7 py-4 font-bold text-white transition hover:bg-brand-accent-dark"
               >
                 Смотреть изделия
               </a>
 
               <a
                 href="#order"
-                class="rounded-full border border-zinc-700 px-7 py-4 font-bold text-white transition hover:border-zinc-500"
+                class="rounded-full border border-brand-border px-7 py-4 font-bold text-brand-text transition hover:border-brand-accent hover:text-brand-accent"
               >
                 Рассчитать стоимость
               </a>
@@ -155,8 +153,7 @@ const advantages = [
 
         </div>
 
-        <!-- Bottom label -->
-        <div class="absolute bottom-8 left-6 right-6 mx-auto flex max-w-7xl justify-between text-xs uppercase tracking-[0.2em] text-zinc-600 lg:left-8 lg:right-8">
+        <div class="absolute bottom-8 left-6 right-6 mx-auto flex max-w-7xl justify-between text-xs uppercase tracking-[0.2em] text-brand-muted lg:left-8 lg:right-8">
           <span>ПРОФИСТАЛЬ 14</span>
           <span class="hidden sm:block">ЯКУТСК</span>
         </div>
@@ -165,14 +162,14 @@ const advantages = [
 
 
       <!-- CATALOG -->
-      <section id="catalog" class="bg-zinc-900 py-24 lg:py-32">
+      <section id="catalog" class="bg-brand-section py-24 lg:py-32">
 
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
           <div class="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
 
             <div>
-              <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-orange-500">
+              <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
                 Каталог
               </p>
 
@@ -181,7 +178,7 @@ const advantages = [
               </h2>
             </div>
 
-            <p class="max-w-md text-zinc-400">
+            <p class="max-w-md text-brand-muted">
               Изготавливаем изделия серийно и по индивидуальным
               проектам. Если нужного варианта нет в каталоге —
               просто расскажите нам свою идею.
@@ -190,37 +187,37 @@ const advantages = [
           </div>
 
 
-          <div class="grid gap-px overflow-hidden rounded-2xl bg-zinc-700 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="grid overflow-hidden rounded-2xl border border-brand-border bg-brand-border sm:grid-cols-2 lg:grid-cols-4">
 
             {categories.map((category, index) => (
               <a
                 href="#order"
-                class="group min-h-64 bg-zinc-900 p-7 transition hover:bg-zinc-800"
+                class="group min-h-64 bg-white p-7 transition hover:bg-[#faf8f5]"
               >
 
                 <div class="flex h-full flex-col justify-between">
 
                   <div>
-                    <span class="text-xs font-bold text-zinc-600">
-                      0{index + 1}
+                    <span class="text-xs font-bold text-brand-muted/60">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
 
                     <h3 class="mt-12 text-xl font-bold">
                       {category.title}
                     </h3>
 
-                    <p class="mt-3 text-sm leading-relaxed text-zinc-500 transition group-hover:text-zinc-400">
+                    <p class="mt-3 text-sm leading-relaxed text-brand-muted">
                       {category.description}
                     </p>
                   </div>
 
                   <div class="mt-8 flex items-center justify-between">
 
-                    <span class="text-sm font-bold text-orange-500">
+                    <span class="text-sm font-bold text-brand-accent">
                       Заказать
                     </span>
 
-                    <span class="text-xl text-zinc-600 transition group-hover:translate-x-1 group-hover:text-orange-500">
+                    <span class="text-xl text-brand-muted/50 transition group-hover:translate-x-1 group-hover:text-brand-accent">
                       →
                     </span>
 
@@ -239,7 +236,7 @@ const advantages = [
 
 
       <!-- ADVANTAGES -->
-      <section class="border-y border-zinc-800 bg-zinc-950 py-20">
+      <section class="border-y border-brand-border bg-white py-20">
 
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -248,11 +245,11 @@ const advantages = [
             {advantages.map((advantage, index) => (
               <div class="flex gap-4">
 
-                <span class="text-sm font-bold text-orange-500">
-                  0{index + 1}
+                <span class="text-sm font-bold text-brand-accent">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <p class="font-semibold leading-relaxed text-zinc-300">
+                <p class="font-semibold leading-relaxed text-brand-text">
                   {advantage}
                 </p>
 
@@ -267,12 +264,12 @@ const advantages = [
 
 
       <!-- WORKS -->
-      <section id="works" class="bg-zinc-900 py-24 lg:py-32">
+      <section id="works" class="bg-brand-bg py-24 lg:py-32">
 
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
           <div class="mb-14">
-            <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-orange-500">
+            <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
               Портфолио
             </p>
 
@@ -281,20 +278,44 @@ const advantages = [
             </h2>
           </div>
 
-          <div class="grid gap-4 md:grid-cols-2">
 
-            <div class="flex min-h-80 items-end rounded-2xl bg-zinc-800 p-8">
-              <div>
-                <p class="text-sm text-orange-500">В цеху</p>
-                <h3 class="mt-2 text-2xl font-bold">Производство</h3>
+          <div class="grid gap-5 md:grid-cols-2">
+
+            <div class="group relative flex min-h-80 items-end overflow-hidden rounded-2xl border border-brand-border bg-brand-section p-8 transition hover:border-brand-accent">
+
+              <div class="relative z-10">
+                <p class="text-sm font-semibold text-brand-accent">
+                  В цеху
+                </p>
+
+                <h3 class="mt-2 text-2xl font-bold">
+                  Производство
+                </h3>
               </div>
+
+              <div class="absolute right-8 top-8 text-6xl font-black text-brand-accent/10">
+                01
+              </div>
+
             </div>
 
-            <div class="flex min-h-80 items-end rounded-2xl bg-zinc-800 p-8">
-              <div>
-                <p class="text-sm text-orange-500">На объектах</p>
-                <h3 class="mt-2 text-2xl font-bold">Готовые проекты</h3>
+
+            <div class="group relative flex min-h-80 items-end overflow-hidden rounded-2xl border border-brand-border bg-brand-section p-8 transition hover:border-brand-accent">
+
+              <div class="relative z-10">
+                <p class="text-sm font-semibold text-brand-accent">
+                  На объектах
+                </p>
+
+                <h3 class="mt-2 text-2xl font-bold">
+                  Готовые проекты
+                </h3>
               </div>
+
+              <div class="absolute right-8 top-8 text-6xl font-black text-brand-accent/10">
+                02
+              </div>
+
             </div>
 
           </div>
@@ -305,24 +326,26 @@ const advantages = [
 
 
       <!-- ABOUT -->
-      <section id="about" class="bg-zinc-950 py-24 lg:py-32">
+      <section id="about" class="bg-white py-24 lg:py-32">
 
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
           <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
 
             <div>
-              <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-orange-500">
+              <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
                 О компании
               </p>
 
               <h2 class="text-4xl font-black tracking-tight sm:text-5xl">
-                ОТ ИДЕИ<br />
+                ОТ ИДЕИ
+                <br />
                 ДО РЕАЛИЗАЦИИ
               </h2>
             </div>
 
-            <div class="text-lg leading-relaxed text-zinc-400">
+            <div class="text-lg leading-relaxed text-brand-muted">
+
               <p>
                 ПрофиСталь 14 — производство изделий и конструкций
                 из металла на заказ.
@@ -343,112 +366,123 @@ const advantages = [
 
 
       <!-- ORDER -->
-      <section id="order" class="bg-orange-500 py-24 text-black lg:py-32">
+      <section id="order" class="bg-brand-accent py-24 text-white lg:py-32">
 
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
           <div class="max-w-3xl">
 
-            <p class="text-sm font-black uppercase tracking-[0.2em]">
+            <p class="text-sm font-black uppercase tracking-[0.2em] text-white/80">
               Есть идея?
             </p>
 
             <h2 class="mt-4 text-5xl font-black tracking-tight sm:text-7xl">
-              ДАВАЙТЕ<br />
+              ДАВАЙТЕ
+              <br />
               ЕЁ РЕАЛИЗУЕМ.
             </h2>
 
-            <p class="mt-6 max-w-xl text-lg text-black/70">
+            <p class="mt-6 max-w-xl text-lg text-white/75">
               Оставьте контакты и кратко расскажите, что вам нужно.
               Мы свяжемся с вами и рассчитаем стоимость.
             </p>
-<iframe
-  name="form-submit-frame"
-  id="form-submit-frame"
-  class="hidden"
-></iframe>
+
+
+            <iframe
+              name="form-submit-frame"
+              id="form-submit-frame"
+              class="hidden"
+            ></iframe>
+
+
             <form
-  id="order-form"
-  class="mt-10 max-w-xl space-y-4"
-  action="https://script.google.com/macros/s/AKfycbz9W5W8VQKRTn7sxlnuT05CB5JnyHpBLHdUO0klWEt5wjP71IG8ykboGMUfRA-1DJSZ/exec"
-  method="POST"
-  target="form-submit-frame"
->
-  <input
-    type="text"
-    name="name"
-    placeholder="Ваше имя *"
-    required
-    autocomplete="name"
-    class="w-full rounded-xl border-0 bg-black/10 px-5 py-4 placeholder:text-black/50 outline-none focus:ring-2 focus:ring-black"
-  />
+              id="order-form"
+              class="mt-10 max-w-xl space-y-4"
+              action="https://script.google.com/macros/s/AKfycbz9W5W8VQKRTn7sxlnuT05CB5JnyHpBLHdUO0klWEt5wjP71IG8ykboGMUfRA-1DJSZ/exec"
+              method="POST"
+              target="form-submit-frame"
+            >
 
-  <input
-    type="tel"
-    name="phone"
-    placeholder="Номер телефона *"
-    required
-    autocomplete="tel"
-    class="w-full rounded-xl border-0 bg-black/10 px-5 py-4 placeholder:text-black/50 outline-none focus:ring-2 focus:ring-black"
-  />
+              <input
+                type="text"
+                name="name"
+                placeholder="Ваше имя *"
+                required
+                autocomplete="name"
+                class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+              />
 
-  <select
-    name="product"
-    required
-    class="w-full appearance-none rounded-xl border-0 bg-black/10 px-5 py-4 text-black/70 outline-none focus:ring-2 focus:ring-black"
-  >
-    <option value="">Что хотите заказать? *</option>
-    {categories.map((category) => (
-      <option value={category.title}>
-        {category.title}
-      </option>
-    ))}
-    <option value="Другое">Другое</option>
-  </select>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Номер телефона *"
+                required
+                autocomplete="tel"
+                class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+              />
 
-  <input
-    type="text"
-    name="size"
-    placeholder="Размеры"
-    class="w-full rounded-xl border-0 bg-black/10 px-5 py-4 placeholder:text-black/50 outline-none focus:ring-2 focus:ring-black"
-  />
+              <select
+                name="product"
+                required
+                class="w-full appearance-none rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white outline-none focus:ring-2 focus:ring-white"
+              >
+                <option value="" class="text-brand-text">Что хотите заказать? *</option>
 
-  <input
-    type="number"
-    name="quantity"
-    min="1"
-    placeholder="Количество"
-    class="w-full rounded-xl border-0 bg-black/10 px-5 py-4 placeholder:text-black/50 outline-none focus:ring-2 focus:ring-black"
-  />
+                {categories.map((category) => (
+                  <option value={category.title} class="text-brand-text">
+                    {category.title}
+                  </option>
+                ))}
 
-  <textarea
-    name="comment"
-    rows="4"
-    placeholder="Расскажите подробнее о заказе"
-    class="w-full resize-none rounded-xl border-0 bg-black/10 px-5 py-4 placeholder:text-black/50 outline-none focus:ring-2 focus:ring-black"
-  ></textarea>
+                <option value="Другое" class="text-brand-text">
+                  Другое
+                </option>
+              </select>
 
-  <input
-    type="email"
-    name="email"
-    placeholder="E-mail (необязательно)"
-    autocomplete="email"
-    class="w-full rounded-xl border-0 bg-black/10 px-5 py-4 placeholder:text-black/50 outline-none focus:ring-2 focus:ring-black"
-  />
+              <input
+                type="text"
+                name="size"
+                placeholder="Размеры"
+                class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+              />
 
-  <button
-    id="order-submit"
-    type="submit"
-    class="w-full rounded-xl bg-black px-6 py-4 font-bold text-white transition hover:bg-zinc-900 disabled:cursor-not-allowed disabled:opacity-50"
-  >
-    Отправить заявку
-  </button>
+              <input
+                type="number"
+                name="quantity"
+                min="1"
+                placeholder="Количество"
+                class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+              />
 
-  <p
-    id="order-status"
-    class="hidden rounded-xl bg-black/10 px-5 py-4 text-sm font-semibold"
-  ></p>
-</form>
+              <textarea
+                name="comment"
+                rows="4"
+                placeholder="Расскажите подробнее о заказе"
+                class="w-full resize-none rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+              ></textarea>
+
+              <input
+                type="email"
+                name="email"
+                placeholder="E-mail (необязательно)"
+                autocomplete="email"
+                class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+              />
+
+              <button
+                id="order-submit"
+                type="submit"
+                class="w-full rounded-xl bg-white px-6 py-4 font-bold text-brand-accent transition hover:bg-brand-bg disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                Отправить заявку
+              </button>
+
+              <p
+                id="order-status"
+                class="hidden rounded-xl bg-white/15 px-5 py-4 text-sm font-semibold"
+              ></p>
+
+            </form>
 
           </div>
 
@@ -460,66 +494,79 @@ const advantages = [
 
 
     <!-- FOOTER -->
-    <footer id="contacts" class="bg-black py-12">
+    <footer id="contacts" class="bg-brand-text py-12 text-white">
 
       <div class="mx-auto flex max-w-7xl flex-col gap-8 px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
 
         <div>
+
           <div class="text-xl font-black">
-            ПРОФИ<span class="text-orange-500">СТАЛЬ</span>
-            <span class="ml-1 text-sm text-zinc-500">14</span>
+            ПРОФИ<span class="text-brand-accent">СТАЛЬ</span>
+            <span class="ml-1 text-sm text-white/40">14</span>
           </div>
 
-          <p class="mt-2 text-sm text-zinc-600">
+          <p class="mt-2 text-sm text-white/50">
             От идеи до реализации
           </p>
+
         </div>
 
-        <div class="text-sm text-zinc-500 lg:text-right">
+
+        <div class="text-sm text-white/50 lg:text-right">
+
           <p>Якутск</p>
-          <p class="mt-1">Телефон: +7 (___) ___-__-__</p>
-          <p class="mt-4 text-xs text-zinc-700">
+
+          <p class="mt-1">
+            Телефон: +7 (___) ___-__-__
+          </p>
+
+          <p class="mt-4 text-xs text-white/30">
             © 2026 ПрофиСталь 14
           </p>
+
         </div>
 
       </div>
 
     </footer>
-<script>
-  const form = document.querySelector("#order-form");
-  const submitButton = document.querySelector("#order-submit");
-  const status = document.querySelector("#order-status");
-  const frame = document.querySelector("#form-submit-frame");
 
-  let submitted = false;
 
-  form?.addEventListener("submit", () => {
-    if (!form || !submitButton || !status) return;
+    <script>
+      const form = document.querySelector("#order-form");
+      const submitButton = document.querySelector("#order-submit");
+      const status = document.querySelector("#order-status");
+      const frame = document.querySelector("#form-submit-frame");
 
-    submitted = true;
+      let submitted = false;
 
-    submitButton.disabled = true;
-    submitButton.textContent = "Отправляем...";
+      form?.addEventListener("submit", () => {
+        if (!form || !submitButton || !status) return;
 
-    status.classList.add("hidden");
-    status.textContent = "";
-  });
+        submitted = true;
 
-  frame?.addEventListener("load", () => {
-    if (!submitted || !form || !submitButton || !status) return;
+        submitButton.disabled = true;
+        submitButton.textContent = "Отправляем...";
 
-    submitted = false;
+        status.classList.add("hidden");
+        status.textContent = "";
+      });
 
-    form.reset();
+      frame?.addEventListener("load", () => {
+        if (!submitted || !form || !submitButton || !status) return;
 
-    submitButton.disabled = false;
-    submitButton.textContent = "Отправить заявку";
+        submitted = false;
 
-    status.textContent =
-      "Заявка отправлена! Мы свяжемся с вами для уточнения деталей.";
-    status.classList.remove("hidden");
-  });
-</script>
+        form.reset();
+
+        submitButton.disabled = false;
+        submitButton.textContent = "Отправить заявку";
+
+        status.textContent =
+          "Заявка отправлена! Мы свяжемся с вами для уточнения деталей.";
+
+        status.classList.remove("hidden");
+      });
+    </script>
+
   </body>
 </html>
