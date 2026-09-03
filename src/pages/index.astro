@@ -3,44 +3,52 @@ import "../styles/global.css";
 
 const categories = [
   {
+    emoji: "🪑",
     title: "Лофт-мебель",
     description: "Столы, стеллажи, кровати и мебель из металла",
   },
   {
+    emoji: "🔥",
     title: "Мангалы и зоны отдыха",
     description: "Мангалы, мангальные комплексы и зоны отдыха",
   },
   {
+    emoji: "🚪",
     title: "Заборы и ворота",
     description: "Изготовление и монтаж металлических конструкций",
   },
   {
+    emoji: "🎠",
     title: "Скамейки и качели",
     description: "Для частных участков, парков и общественных пространств",
   },
   {
+    emoji: "🪜",
     title: "Перила и ограждения",
     description: "Перила, ограждения и фальшбалконы",
   },
   {
+    emoji: "💡",
     title: "Светильники",
     description: "Люстры, бра и декоративные светильники",
   },
   {
+    emoji: "🛁",
     title: "Чаны с подогревом",
     description: "Чаны для воды с системой обогрева",
   },
   {
+    emoji: "🏠",
     title: "Гаражи и беседки",
     description: "Металлические конструкции по индивидуальным размерам",
   },
 ];
 
 const advantages = [
-  "Изготовление по индивидуальным размерам",
-  "Собственное производство",
-  "Доставка и монтаж",
-  "От идеи до готового изделия",
+  "📐 Изготовление по индивидуальным размерам",
+  "🏭 Собственное производство",
+  "🚚 Доставка и монтаж",
+  "💡 От идеи до готового изделия",
 ];
 ---
 
@@ -195,7 +203,7 @@ const advantages = [
 
                   <div>
                     <span class="text-xs font-bold text-brand-muted/60">
-                      {String(index + 1).padStart(2, "0")}
+                      {category.emoji}
                     </span>
 
                     <h3 class="mt-12 text-xl font-bold">
@@ -604,15 +612,43 @@ const advantages = [
 
         <div class="text-sm text-white/50 lg:text-right">
 
-          <p>Якутск</p>
+<p>
+  📍 Улица Тальниковая, 1/4<br />
+  Марха м-н, Якутск, 677901
+</p>
 
-          <p class="mt-1">
-            Телефон: +7 (___) ___-__-__
-          </p>
+<p class="mt-4 w-full text-left">
+  <a
+    href="tel:+79143000818"
+    class="transition hover:text-brand-accent"
+  >
+    ☎️ +7 (914) 300-08-18
+  </a>
+</p>
 
-          <p class="mt-4 text-xs text-white/30">
-            © 2026 ПрофиСталь 14
-          </p>
+<div class="mt-4 flex flex-col items-start gap-2">
+  <a
+    href="https://wa.me/79143000818?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%0A%0A%D0%9F%D0%B8%D1%88%D1%83%20%D0%B8%D0%B7%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="transition hover:text-brand-accent"
+  >
+    🟢 Написать в WhatsApp →
+  </a>
+
+  <a
+    href="https://max.ru/u/f9LHodD0cOITCI8gwaBHfZSrOMeiWprSrqpOTy3X9Ti645JbFQfa3i55JjY"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="transition hover:text-brand-accent"
+  >
+    Ⓜ️ Написать в MAX →
+  </a>
+</div>
+
+<p class="mt-4 text-xs text-white/30">
+  © 2026 ПрофиСталь 14
+</p>
 
         </div>
 
