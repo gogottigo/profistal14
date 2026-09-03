@@ -62,15 +62,12 @@ const advantages = [
     <header class="absolute left-0 top-0 z-50 w-full">
       <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
 
-        <a href="/" class="group">
-          <div class="text-xl font-black tracking-tight">
-            ПРОФИ<span class="text-brand-accent">СТАЛЬ</span>
-            <span class="ml-1 text-sm font-bold text-brand-muted">14</span>
-          </div>
-
-          <div class="mt-0.5 text-[9px] uppercase tracking-[0.25em] text-brand-muted">
-            От идеи до реализации
-          </div>
+        <a href="/" class="group block">
+          <img
+            src={`${import.meta.env.BASE_URL}profistal14_logo.png`}
+            alt="ПрофиСталь 14"
+            class="h-auto w-[190px] object-contain transition-opacity group-hover:opacity-85 sm:w-[220px]"
+          />
         </a>
 
         <nav class="hidden items-center gap-8 text-sm font-medium text-brand-muted md:flex">
@@ -120,12 +117,11 @@ const advantages = [
               Изделия из металла
             </div>
 
-            <h1 class="text-5xl font-black leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl">
-              МЕТАЛЛ,
-              <br />
-              КОТОРЫЙ
-              <span class="text-brand-accent">РАБОТАЕТ.</span>
-            </h1>
+            <h1 class="text-4xl font-black leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl">
+  МЕТАЛЛ,<br>
+  КОТОРЫЙ
+  <span class="text-brand-accent whitespace-nowrap">РАБОТАЕТ.</span>
+</h1>
 
             <p class="mt-8 max-w-xl text-lg leading-relaxed text-brand-muted">
               Изготавливаем изделия и конструкции из металла
@@ -242,20 +238,13 @@ const advantages = [
 
           <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
-            {advantages.map((advantage, index) => (
-              <div class="flex gap-4">
-
-                <span class="text-sm font-bold text-brand-accent">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <p class="font-semibold leading-relaxed text-brand-text">
-                  {advantage}
-                </p>
-
-              </div>
-            ))}
-
+            {advantages.map((advantage) => (
+  <div class="flex gap-4">
+    <p class="font-semibold leading-relaxed text-brand-text">
+      {advantage}
+    </p>
+  </div>
+))}
           </div>
 
         </div>
@@ -279,51 +268,140 @@ const advantages = [
           </div>
 
 
-          <div class="grid gap-5 md:grid-cols-2">
 
-            <div class="group relative flex min-h-80 items-end overflow-hidden rounded-2xl border border-brand-border bg-brand-section p-8 transition hover:border-brand-accent">
+        <div class="grid gap-5 md:grid-cols-2">
 
-              <div class="relative z-10">
-                <p class="text-sm font-semibold text-brand-accent">
-                  В цеху
-                </p>
+<button
+  type="button"
+  data-gallery="production"
+  class="group relative flex min-h-80 w-full cursor-pointer items-end overflow-hidden rounded-2xl border border-brand-border bg-brand-section p-8 text-left transition hover:border-brand-accent"
+>
+  <!-- Фоновая фотография -->
+  <img
+    src={`${import.meta.env.BASE_URL}gallery/production/01.png`}
+    alt=""
+    class="absolute inset-0 h-full w-full scale-105 object-cover blur-[2px] transition duration-500 group-hover:scale-110"
+  />
 
-                <h3 class="mt-2 text-2xl font-bold">
-                  Производство
-                </h3>
-              </div>
+  <!-- Затемнение -->
+  <div class="absolute inset-0 bg-black/55 transition group-hover:bg-black/40"></div>
 
-              <div class="absolute right-8 top-8 text-6xl font-black text-brand-accent/10">
-                01
-              </div>
+  <!-- Контент -->
+  <div class="relative z-10">
+    <p class="text-sm font-semibold text-brand-accent">
+      В цеху
+    </p>
 
-            </div>
+    <h3 class="mt-2 text-2xl font-bold text-white">
+      Производство
+    </h3>
+
+    <p class="mt-3 text-sm text-white/70 opacity-0 transition group-hover:opacity-100">
+      Смотреть фотографии →
+    </p>
+  </div>
 
 
-            <div class="group relative flex min-h-80 items-end overflow-hidden rounded-2xl border border-brand-border bg-brand-section p-8 transition hover:border-brand-accent">
+</button>
 
-              <div class="relative z-10">
-                <p class="text-sm font-semibold text-brand-accent">
-                  На объектах
-                </p>
 
-                <h3 class="mt-2 text-2xl font-bold">
-                  Готовые проекты
-                </h3>
-              </div>
+<button
+  type="button"
+  data-gallery="works"
+  class="group relative flex min-h-80 w-full cursor-pointer items-end overflow-hidden rounded-2xl border border-brand-border bg-brand-section p-8 text-left transition hover:border-brand-accent"
+>
+  <!-- Фоновая фотография -->
+  <img
+    src={`${import.meta.env.BASE_URL}gallery/works/01.png`}
+    alt=""
+    class="absolute inset-0 h-full w-full scale-105 object-cover blur-[2px] transition duration-500 group-hover:scale-110"
+  />
 
-              <div class="absolute right-8 top-8 text-6xl font-black text-brand-accent/10">
-                02
-              </div>
+  <!-- Затемнение -->
+  <div class="absolute inset-0 bg-black/55 transition group-hover:bg-black/40"></div>
 
-            </div>
+  <!-- Контент -->
+  <div class="relative z-10">
+    <p class="text-sm font-semibold text-brand-accent">
+      На объектах
+    </p>
 
-          </div>
+    <h3 class="mt-2 text-2xl font-bold text-white">
+      Готовые проекты
+    </h3>
+
+    <p class="mt-3 text-sm text-white/70 opacity-0 transition group-hover:opacity-100">
+      Смотреть фотографии →
+    </p>
+  </div>
+
+</button>
+
+</div>
 
         </div>
 
       </section>
+<div
+  id="gallery-modal"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+>
+  <div
+    id="gallery-content"
+    class="relative w-full max-w-5xl rounded-2xl bg-brand-section p-5 shadow-2xl"
+  >
 
+    <!-- Закрыть -->
+    <button
+      id="gallery-close"
+      type="button"
+      class="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-xl text-white transition hover:bg-brand-accent"
+      aria-label="Закрыть"
+    >
+      ×
+    </button>
+
+    <h3
+      id="gallery-title"
+      class="mb-5 pr-12 text-2xl font-bold"
+    ></h3>
+
+    <!-- Большая картинка -->
+    <div class="relative">
+      <img
+        id="gallery-image"
+        src=""
+        alt=""
+        class="mx-auto max-h-[65vh] w-full rounded-xl object-contain"
+      />
+
+      <!-- Назад -->
+      <button
+        id="gallery-prev"
+        type="button"
+        class="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-2xl text-white transition hover:bg-brand-accent"
+      >
+        ‹
+      </button>
+
+      <!-- Вперёд -->
+      <button
+        id="gallery-next"
+        type="button"
+        class="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-2xl text-white transition hover:bg-brand-accent"
+      >
+        ›
+      </button>
+    </div>
+
+    <!-- Миниатюры -->
+    <div
+      id="gallery-thumbnails"
+      class="mt-4 flex gap-3 overflow-x-auto pb-2"
+    ></div>
+
+  </div>
+</div>
 
       <!-- ABOUT -->
       <section id="about" class="bg-white py-24 lg:py-32">
@@ -347,13 +425,30 @@ const advantages = [
             <div class="text-lg leading-relaxed text-brand-muted">
 
               <p>
-                ПрофиСталь 14 — производство изделий и конструкций
-                из металла на заказ.
+                ООО "ПрофиСталь14" это небольшое, но уверенное в себе производство. Наши товары производятся в Якутске и отпускаются по месту производства либо со склада в Якутске.
               </p>
 
               <p class="mt-6">
-                Проектируем, изготавливаем и устанавливаем
-                металлические изделия под задачи клиента.
+                Мы делаем простую и надёжную мебель, кованые изделия, элементы интерьера и полезные мелочи. Работаем с деревом, металлом, фанерой, ЛДСП; не гонимся за модой, зато внимательно подходим к каждой детали.
+              </p>
+              
+              <p class="mt-6">
+                Работаем с деревом, металлом, фанерой, ЛДСП; не гонимся за модой, зато внимательно подходим к каждой детали.
+              </p>
+              <p class="mt-6">
+                Всё, что вы видите на сайте, мы изготавливаем сами.
+              </p>
+              <p class="mt-6">
+                Часть позиций — типовые, часть делаем под заказ.
+              </p>
+              <p class="mt-6">
+                Для бизнеса, для дома, для детских учреждений — делаем так, чтобы работало долго.
+              </p>
+              <p class="mt-6">
+                Никаких «временных коллекций» и громких слов.
+              </p>
+              <p class="mt-6">
+                Только то, что нужно.
               </p>
 
             </div>
@@ -498,18 +593,13 @@ const advantages = [
 
       <div class="mx-auto flex max-w-7xl flex-col gap-8 px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
 
-        <div>
-
-          <div class="text-xl font-black">
-            ПРОФИ<span class="text-brand-accent">СТАЛЬ</span>
-            <span class="ml-1 text-sm text-white/40">14</span>
-          </div>
-
-          <p class="mt-2 text-sm text-white/50">
-            От идеи до реализации
-          </p>
-
-        </div>
+  <div>
+    <img
+      src={`${import.meta.env.BASE_URL}profistal14_box_logo.png`}
+      alt="ПрофиСталь 14"
+      class="h-48 w-auto"
+    />
+  </div>
 
 
         <div class="text-sm text-white/50 lg:text-right">
@@ -567,6 +657,143 @@ const advantages = [
         status.classList.remove("hidden");
       });
     </script>
+<script>
+  const galleries = {
+    production: {
+      title: "Производство",
+      images: [
+        `${import.meta.env.BASE_URL}gallery/production/01.png`,
+        `${import.meta.env.BASE_URL}gallery/production/02.png`,
+        `${import.meta.env.BASE_URL}gallery/production/03.png`,
+        `${import.meta.env.BASE_URL}gallery/production/04.png`,
+      ],
+    },
 
+    works: {
+      title: "Готовые проекты",
+      images: [
+        `${import.meta.env.BASE_URL}gallery/works/01.png`,
+        `${import.meta.env.BASE_URL}gallery/works/02.png`,
+        `${import.meta.env.BASE_URL}gallery/works/03.png`,
+        `${import.meta.env.BASE_URL}gallery/works/04.png`,
+        `${import.meta.env.BASE_URL}gallery/works/05.png`,
+      ],
+    },
+  };
+
+  const modal = document.querySelector("#gallery-modal");
+  const image = document.querySelector("#gallery-image");
+  const title = document.querySelector("#gallery-title");
+  const thumbnails = document.querySelector("#gallery-thumbnails");
+  const close = document.querySelector("#gallery-close");
+  const prev = document.querySelector("#gallery-prev");
+  const next = document.querySelector("#gallery-next");
+
+  let currentGallery = null;
+  let currentIndex = 0;
+
+  function showImage(index) {
+    if (!currentGallery) return;
+
+    currentIndex =
+      (index + currentGallery.images.length) %
+      currentGallery.images.length;
+
+    image.src = currentGallery.images[currentIndex];
+
+    thumbnails.innerHTML = "";
+
+    currentGallery.images.forEach((src, i) => {
+      const thumb = document.createElement("button");
+
+      thumb.type = "button";
+      thumb.className =
+        "h-20 w-28 shrink-0 overflow-hidden rounded-lg border-2 transition";
+
+      if (i === currentIndex) {
+        thumb.classList.add("border-brand-accent");
+      } else {
+        thumb.classList.add("border-transparent");
+      }
+
+      const img = document.createElement("img");
+
+      img.src = src;
+      img.alt = "";
+      img.className = "h-full w-full object-cover";
+
+      thumb.appendChild(img);
+
+      thumb.addEventListener("click", () => {
+        showImage(i);
+      });
+
+      thumbnails.appendChild(thumb);
+    });
+  }
+
+  function openGallery(name) {
+    currentGallery = galleries[name];
+
+    if (!currentGallery) return;
+
+    currentIndex = 0;
+    title.textContent = currentGallery.title;
+
+    showImage(0);
+
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeGallery() {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+
+    document.body.style.overflow = "";
+
+    currentGallery = null;
+  }
+
+  document.querySelectorAll("[data-gallery]").forEach((button) => {
+    button.addEventListener("click", () => {
+      openGallery(button.dataset.gallery);
+    });
+  });
+
+  close.addEventListener("click", closeGallery);
+
+  prev.addEventListener("click", () => {
+    showImage(currentIndex - 1);
+  });
+
+  next.addEventListener("click", () => {
+    showImage(currentIndex + 1);
+  });
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeGallery();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!currentGallery) return;
+
+    if (event.key === "Escape") {
+      closeGallery();
+    }
+
+    if (event.key === "ArrowLeft") {
+      showImage(currentIndex - 1);
+    }
+
+    if (event.key === "ArrowRight") {
+      showImage(currentIndex + 1);
+    }
+  });
+</script>
   </body>
 </html>
