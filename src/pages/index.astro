@@ -62,6 +62,7 @@ const advantages = [
       content="ПрофиСталь 14 — изготовление изделий и конструкций из металла на заказ в Якутске."
     />
     <title>ПрофиСталь 14 — изделия из металла на заказ</title>
+    <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}/favicon.png`} />
   </head>
 
   <body class="bg-brand-bg text-brand-text antialiased">
@@ -99,70 +100,83 @@ const advantages = [
     <!-- HERO -->
     <main>
 
-      <section class="relative flex min-h-screen items-center overflow-hidden bg-brand-bg">
+<section class="relative flex min-h-screen items-center overflow-hidden bg-brand-bg">
 
-        <!-- Decorative background -->
-        <div class="pointer-events-none absolute inset-0">
-          <div
-            class="absolute right-0 top-0 h-full w-1/2 opacity-40"
-            style="
-              background-image:
-                linear-gradient(rgba(139,94,60,.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(139,94,60,.06) 1px, transparent 1px);
-              background-size: 70px 70px;
-            "
-          ></div>
+  <!-- Hero background image -->
+  <div class="pointer-events-none absolute inset-0">
+    <img
+      src={`${import.meta.env.BASE_URL}/hero-bg.jpg`}
+      alt=""
+      class="h-full w-full scale-105 object-cover blur-[5px]"
+    />
 
-          <div class="absolute -right-40 top-1/4 h-[500px] w-[500px] rounded-full bg-brand-accent/10 blur-[140px]"></div>
-        </div>
+    <!-- Dark overlay for text readability -->
+    <div class="absolute inset-0 bg-brand-bg/75"></div>
+  </div>
 
-        <div class="relative mx-auto w-full max-w-7xl px-6 py-32 lg:px-8">
+  <!-- Decorative background -->
+  <div class="pointer-events-none absolute inset-0">
+    <div
+      class="absolute right-0 top-0 h-full w-1/2 opacity-40"
+      style="
+        background-image:
+          linear-gradient(rgba(139,94,60,.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(139,94,60,.06) 1px, transparent 1px);
+        background-size: 70px 70px;
+      "
+    ></div>
 
-          <div class="max-w-4xl">
+    <div class="absolute -right-40 top-1/4 h-[500px] w-[500px] rounded-full bg-brand-accent/10 blur-[140px]"></div>
+  </div>
 
-            <div class="mb-7 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.25em] text-brand-accent">
-              <span class="h-px w-10 bg-brand-accent"></span>
-              Изделия из металла
-            </div>
+  <!-- Content -->
+  <div class="relative mx-auto w-full max-w-7xl px-6 py-32 lg:px-8">
 
-            <h1 class="text-4xl font-black leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl">
+    <div class="max-w-4xl">
+
+      <div class="mb-7 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.25em] text-brand-accent">
+        <span class="h-px w-10 bg-brand-accent"></span>
+        Изделия из металла
+      </div>
+
+<h1 class="text-4xl font-black leading-[1.20] tracking-tight sm:text-7xl lg:text-8xl">
   МЕТАЛЛ,<br>
   КОТОРЫЙ
   <span class="text-brand-accent whitespace-nowrap">РАБОТАЕТ.</span>
 </h1>
 
-            <p class="mt-8 max-w-xl text-lg leading-relaxed text-brand-muted">
-              Изготавливаем изделия и конструкции из металла
-              по вашим размерам и проектам — от небольшой
-              детали до комплексного объекта.
-            </p>
+      <p class="mt-8 max-w-xl text-lg leading-relaxed text-brand-muted">
+        Изготавливаем изделия и конструкции из металла
+        по вашим размерам и проектам — от небольшой
+        детали до комплексного объекта.
+      </p>
 
-            <div class="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#catalog"
-                class="rounded-full bg-brand-accent px-7 py-4 font-bold text-white transition hover:bg-brand-accent-dark"
-              >
-                Смотреть изделия
-              </a>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a
+          href="#catalog"
+          class="rounded-full bg-brand-accent px-7 py-4 font-bold text-white transition hover:bg-brand-accent-dark"
+        >
+          Смотреть изделия
+        </a>
 
-              <a
-                href="#order"
-                class="rounded-full border border-brand-border px-7 py-4 font-bold text-brand-text transition hover:border-brand-accent hover:text-brand-accent"
-              >
-                Рассчитать стоимость
-              </a>
-            </div>
+        <a
+          href="#order"
+          class="rounded-full border border-brand-border px-7 py-4 font-bold text-brand-text transition hover:border-brand-accent hover:text-brand-accent"
+        >
+          Рассчитать стоимость
+        </a>
+      </div>
 
-          </div>
+    </div>
 
-        </div>
+  </div>
 
-        <div class="absolute bottom-8 left-6 right-6 mx-auto flex max-w-7xl justify-between text-xs uppercase tracking-[0.2em] text-brand-muted lg:left-8 lg:right-8">
-          <span>ПРОФИСТАЛЬ 14</span>
-          <span class="hidden sm:block">ЯКУТСК</span>
-        </div>
+  <div class="absolute bottom-8 left-6 right-6 mx-auto flex max-w-7xl justify-between text-xs uppercase tracking-[0.2em] text-brand-muted lg:left-8 lg:right-8">
+    <span>ПРОФИСТАЛЬ 14</span>
+    <span class="hidden sm:block">ЯКУТСК</span>
+  </div>
 
-      </section>
+</section>
 
 
       <!-- CATALOG -->
@@ -411,61 +425,87 @@ const advantages = [
   </div>
 </div>
 
-      <!-- ABOUT -->
-      <section id="about" class="bg-white py-24 lg:py-32">
+ <!-- ABOUT -->
+<section
+  id="about"
+  class="relative overflow-hidden bg-white py-24 lg:py-32"
+>
 
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+  <!-- Background image -->
+  <div class="absolute inset-0">
+    <img
+      src={`${import.meta.env.BASE_URL}/about-bg.jpg`}
+      alt=""
+      class="h-full w-full scale-105 object-cover blur-[6px]"
+    />
 
-          <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black/7"></div>
+  </div>
 
-            <div>
-              <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
-                О компании
-              </p>
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
 
-              <h2 class="text-4xl font-black tracking-tight sm:text-5xl">
-                ОТ ИДЕИ
-                <br />
-                ДО РЕАЛИЗАЦИИ
-              </h2>
-            </div>
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
 
-            <div class="text-lg leading-relaxed text-brand-muted">
+      <!-- Left side -->
+      <div class="py-8">
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
+          О компании
+        </p>
 
-              <p>
-                ООО "ПрофиСталь14" это небольшое, но уверенное в себе производство. Наши товары производятся в Якутске и отпускаются по месту производства либо со склада в Якутске.
-              </p>
+        <h2 class="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+          ОТ ИДЕИ
+          <br />
+          ДО РЕАЛИЗАЦИИ
+        </h2>
+      </div>
 
-              <p class="mt-6">
-                Мы делаем простую и надёжную мебель, кованые изделия, элементы интерьера и полезные мелочи. Работаем с деревом, металлом, фанерой, ЛДСП; не гонимся за модой, зато внимательно подходим к каждой детали.
-              </p>
-              
-              <p class="mt-6">
-                Работаем с деревом, металлом, фанерой, ЛДСП; не гонимся за модой, зато внимательно подходим к каждой детали.
-              </p>
-              <p class="mt-6">
-                Всё, что вы видите на сайте, мы изготавливаем сами.
-              </p>
-              <p class="mt-6">
-                Часть позиций — типовые, часть делаем под заказ.
-              </p>
-              <p class="mt-6">
-                Для бизнеса, для дома, для детских учреждений — делаем так, чтобы работало долго.
-              </p>
-              <p class="mt-6">
-                Никаких «временных коллекций» и громких слов.
-              </p>
-              <p class="mt-6">
-                Только то, что нужно.
-              </p>
+      <!-- Right side -->
+      <div class="border border-white/20 bg-black/45 p-8 backdrop-blur-sm lg:p-10">
 
-            </div>
+        <div class="text-lg leading-relaxed text-white/80">
 
-          </div>
+          <p>
+            ООО "ПрофиСталь14" это небольшое, но уверенное в себе производство.
+            Наши товары производятся в Якутске и отпускаются по месту производства
+            либо со склада в Якутске.
+          </p>
+
+          <p class="mt-6">
+            Мы делаем простую и надёжную мебель, кованые изделия, элементы интерьера
+            и полезные мелочи. Работаем с деревом, металлом, фанерой, ЛДСП;
+            не гонимся за модой, зато внимательно подходим к каждой детали.
+          </p>
+
+          <p class="mt-6">
+            Всё, что вы видите на сайте, мы изготавливаем сами.
+          </p>
+
+          <p class="mt-6">
+            Часть позиций — типовые, часть делаем под заказ.
+          </p>
+
+          <p class="mt-6">
+            Для бизнеса, для дома, для детских учреждений — делаем так, чтобы работало долго.
+          </p>
+
+          <p class="mt-6">
+            Никаких «временных коллекций» и громких слов.
+          </p>
+
+          <p class="mt-6">
+            Только то, что нужно.
+          </p>
 
         </div>
 
-      </section>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
       <!-- ORDER -->
