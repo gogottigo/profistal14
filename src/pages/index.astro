@@ -3,44 +3,76 @@ import "../styles/global.css";
 
 const categories = [
   {
+    id: "loft",
     image: "/optimized/categories/cat-01-loft-mebel.webp",
     title: "Лофт-мебель",
     description: "Столы, стеллажи, кровати и мебель из металла",
+    gallery: Array.from({ length: 8 }, (_, i) =>
+      `/optimized/products/loft/${String(i + 1).padStart(2, "0")}.webp`
+    ),
   },
   {
+    id: "mangals",
     image: "/optimized/categories/cat-02-mangal-zony-otdyha.webp",
     title: "Мангалы и зоны отдыха",
     description: "Мангалы, мангальные комплексы и зоны отдыха",
+    gallery: Array.from({ length: 6 }, (_, i) =>
+      `/optimized/products/mangals/${String(i + 1).padStart(2, "0")}.webp`
+    ),
   },
   {
+    id: "fences",
     image: "/optimized/categories/cat-03-zabor-vorota.webp",
     title: "Заборы и ворота",
     description: "Изготовление и монтаж металлических конструкций",
+    gallery: Array.from({ length: 6 }, (_, i) =>
+      `/optimized/products/fences/${String(i + 1).padStart(2, "0")}.webp`
+    ),
   },
   {
+    id: "benches",
     image: "/optimized/categories/cat-04-skameyki-kacheli.webp",
     title: "Скамейки и качели",
     description: "Для частных участков, парков и общественных пространств",
+    gallery: Array.from({ length: 7 }, (_, i) =>
+      `/optimized/products/benches/${String(i + 1).padStart(2, "0")}.webp`
+    ),
   },
   {
+    id: "perila",
     image: "/optimized/categories/cat-05-perila-ograzhdeniya.webp",
     title: "Перила и ограждения",
     description: "Перила, ограждения и фальшбалконы",
+    gallery: Array.from({ length: 31 }, (_, i) =>
+      `/optimized/products/perila/${String(i + 1).padStart(2, "0")}.webp`
+    ),
   },
   {
+    id: "svetilniki",
     image: "/optimized/categories/cat-06-svetilniki.webp",
     title: "Светильники",
     description: "Люстры, бра и декоративные светильники",
+    gallery: Array.from({ length: 8 }, (_, i) =>
+      `/optimized/products/svetilniki/${String(i + 1).padStart(2, "0")}.webp`
+    ),
   },
   {
+    id: "chany",
     image: "/optimized/categories/cat-07-chany-podogrevom.webp",
     title: "Чаны с подогревом",
     description: "Чаны для воды с системой обогрева",
+    gallery: Array.from({ length: 6 }, (_, i) =>
+      `/optimized/products/chany/${String(i + 1).padStart(2, "0")}.webp`
+    ),
   },
   {
+    id: "besedka",
     image: "/optimized/categories/cat-08-garazhi-besedki.webp",
     title: "Гаражи и беседки",
     description: "Металлические конструкции по индивидуальным размерам",
+    gallery: Array.from({ length: 8 }, (_, i) =>
+      `/optimized/products/besedka/${String(i + 1).padStart(2, "0")}.webp`
+    ),
   },
 ];
 
@@ -205,13 +237,17 @@ const advantages = [
           </div>
 
 
-<div class="grid overflow-hidden rounded-2xl border border-brand-border bg-brand-border sm:grid-cols-2 lg:grid-cols-4">
+<div
+  id="catalog-grid"
+  class="grid overflow-hidden rounded-2xl border border-brand-border bg-brand-border sm:grid-cols-2 lg:grid-cols-4"
+  data-categories={JSON.stringify(categories)}
+>
   {categories.map((category) => (
-    <a
-      href="#order"
-      class="category-card group relative min-h-[320px] overflow-hidden bg-[#f5f3ef]"
+    <button
+      type="button"
+      class="category-card group relative min-h-[320px] overflow-hidden bg-[#f5f3ef] text-left"
+      data-category-id={category.id}
     >
-      <!-- Изображение -->
       <div class="absolute inset-0 flex items-center justify-center p-5">
         <img
           src={category.image}
@@ -221,10 +257,8 @@ const advantages = [
         />
       </div>
 
-      <!-- Светлый градиент для текста -->
       <div class="absolute inset-0 bg-gradient-to-t from-white via-white/75 via-35% to-transparent"></div>
 
-      <!-- Контент -->
       <div class="relative flex min-h-[320px] flex-col justify-end p-6">
         <h3 class="text-xl font-bold leading-tight text-brand-text">
           {category.title}
@@ -236,7 +270,7 @@ const advantages = [
 
         <div class="mt-6 flex items-center justify-between">
           <span class="text-sm font-bold text-brand-accent">
-            Заказать
+            Смотреть работы
           </span>
 
           <span class="text-xl text-brand-muted/50 transition-all duration-300 group-hover:translate-x-1 group-hover:text-brand-accent">
@@ -244,12 +278,81 @@ const advantages = [
           </span>
         </div>
       </div>
-    </a>
+    </button>
   ))}
 </div>
 </div>
       </section>
+<!-- Category gallery modal -->
+<div
+  id="category-modal"
+  class="fixed inset-0 z-[100] hidden"
+  aria-hidden="true"
+>
+  <!-- Background -->
+  <div
+    id="category-modal-backdrop"
+    class="absolute inset-0 bg-black/60 backdrop-blur-sm"
+  ></div>
 
+  <!-- Modal -->
+  <div class="relative flex min-h-full items-center justify-center p-3 sm:p-6">
+    <div
+      id="category-modal-panel"
+      class="relative flex max-h-[94vh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl"
+    >
+      <!-- Header -->
+      <div class="flex shrink-0 items-center justify-between border-b border-brand-border px-5 py-4 sm:px-7">
+        <div>
+          <h2
+            id="category-modal-title"
+            class="text-xl font-bold text-brand-text sm:text-2xl"
+          ></h2>
+
+          <p
+            id="category-modal-count"
+            class="mt-1 text-sm text-brand-muted"
+          ></p>
+        </div>
+
+        <button
+          id="category-modal-close"
+          type="button"
+          aria-label="Закрыть"
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-bg text-2xl leading-none text-brand-text transition hover:bg-brand-border"
+        >
+          ×
+        </button>
+      </div>
+
+      <!-- Gallery -->
+      <div
+        id="category-modal-gallery"
+        class="min-h-0 flex-1 overflow-y-auto p-4 sm:p-6"
+      >
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        </div>
+      </div>
+
+      <!-- Footer -->
+<div class="shrink-0 border-t border-brand-border bg-white px-5 py-4 sm:px-7">
+  <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+    <button
+      id="category-modal-order"
+      type="button"
+      class="w-full rounded-xl bg-brand-accent px-6 py-3.5 text-center text-sm font-bold text-white transition hover:opacity-90 sm:w-auto"
+    >
+      Заказать
+    </button>
+
+    <p class="text-center text-sm italic text-brand-muted sm:text-left">
+      Для участников СВО действует система скидок
+    </p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
 
       <!-- ADVANTAGES -->
       <section class="border-y border-brand-border bg-white py-20">
@@ -879,6 +982,126 @@ const advantages = [
       showImage(currentIndex + 1);
     }
   });
+</script>
+
+<script>
+  const catalogGrid = document.querySelector("#catalog-grid");
+  const categoryModal = document.querySelector("#category-modal");
+  const categoryModalBackdrop = document.querySelector(
+    "#category-modal-backdrop"
+  );
+  const categoryModalClose = document.querySelector("#category-modal-close");
+  const categoryModalOrder = document.querySelector("#category-modal-order");
+  const categoryModalTitle = document.querySelector("#category-modal-title");
+  const categoryModalCount = document.querySelector("#category-modal-count");
+  const categoryModalGallery = document.querySelector(
+    "#category-modal-gallery > div"
+  );
+
+  if (
+    catalogGrid &&
+    categoryModal &&
+    categoryModalClose &&
+    categoryModalOrder &&
+    categoryModalGallery
+  ) {
+    const categories = JSON.parse(
+      catalogGrid.getAttribute("data-categories") || "[]"
+    );
+
+    let currentCategory = null;
+
+    function openCategoryModal(category) {
+      currentCategory = category;
+
+      categoryModalTitle.textContent = category.title;
+      categoryModalCount.textContent = `${category.gallery.length} фото`;
+
+      categoryModalGallery.innerHTML = "";
+
+      category.gallery.forEach((image, index) => {
+        const wrapper = document.createElement("div");
+
+        wrapper.className =
+          "group relative overflow-hidden rounded-xl bg-brand-bg";
+
+        const img = document.createElement("img");
+
+        img.src = image;
+        img.alt = `${category.title} — фото ${index + 1}`;
+        img.loading = index === 0 ? "eager" : "lazy";
+        img.className =
+          "block h-auto w-full cursor-zoom-in object-cover transition-transform duration-500 group-hover:scale-[1.02]";
+
+        wrapper.appendChild(img);
+        categoryModalGallery.appendChild(wrapper);
+      });
+
+      categoryModal.classList.remove("hidden");
+      categoryModal.setAttribute("aria-hidden", "false");
+
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closeCategoryModal() {
+      categoryModal.classList.add("hidden");
+      categoryModal.setAttribute("aria-hidden", "true");
+
+      document.body.classList.remove("overflow-hidden");
+
+      currentCategory = null;
+    }
+
+    catalogGrid.addEventListener("click", (event) => {
+      const card = event.target.closest("[data-category-id]");
+
+      if (!card) return;
+
+      const category = categories.find(
+        (item) => item.id === card.dataset.categoryId
+      );
+
+      if (category) {
+        openCategoryModal(category);
+      }
+    });
+
+    categoryModalClose.addEventListener("click", closeCategoryModal);
+
+    categoryModalBackdrop.addEventListener("click", closeCategoryModal);
+
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.key === "Escape" &&
+        !categoryModal.classList.contains("hidden")
+      ) {
+        closeCategoryModal();
+      }
+    });
+
+    categoryModalOrder.addEventListener("click", () => {
+      closeCategoryModal();
+
+      const orderSection = document.querySelector("#order");
+
+      if (orderSection) {
+        orderSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      setTimeout(() => {
+        const firstInput = document.querySelector(
+          "#order input:not([type='hidden'])"
+        );
+
+        if (firstInput) {
+          firstInput.focus();
+        }
+      }, 700);
+    });
+  }
 </script>
 
 <!-- Floating contact buttons -->

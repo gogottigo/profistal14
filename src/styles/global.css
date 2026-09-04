@@ -36,3 +36,26 @@ body {
   background: #8b5e3c;
   color: #ffffff;
 }
+
+.category-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.category-card {
+  cursor: pointer;
+}
+
+#category-modal {
+  animation: category-modal-in 0.2s ease-out;
+}
+
+@keyframes category-modal-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
