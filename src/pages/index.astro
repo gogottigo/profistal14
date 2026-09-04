@@ -80,7 +80,7 @@ const categories = [
     image: "/optimized/categories/cat-08-garazhi-besedki.webp",
     title: "Беседки",
     description: "Металлические беседки по индивидуальным размерам",
-    gallery: Array.from({ length: 5 }, (_, i) =>
+    gallery: Array.from({ length: 4 }, (_, i) =>
       `/optimized/products/besedka/${String(i + 1).padStart(2, "0")}.webp`
     ),
   },
@@ -89,16 +89,32 @@ const categories = [
     image: "/optimized/categories/cat-09-navesy.webp",
     title: "Навесы",
     description: "Металлические навесы для автомобилей, домов и участков",
-    gallery: Array.from({ length: 3 }, (_, i) =>
+    gallery: Array.from({ length: 4 }, (_, i) =>
       `/optimized/products/navesy/${String(i + 1).padStart(2, "0")}.webp`
     ),
   },
 ];
 const advantages = [
-  "Собственное производство в Якутске",
-  "Изготовление по индивидуальным размерам",
-  "Работаем с металлом, деревом и ЛДСП",
-  "Доставка и монтаж",
+  {
+    title: "Собственное производство",
+    description: "Изготавливаем металлические конструкции в Якутске",
+    icon: "factory",
+  },
+  {
+    title: "Индивидуальные размеры",
+    description: "Изготовление по вашим размерам и требованиям",
+    icon: "ruler",
+  },
+  {
+    title: "Разные материалы",
+    description: "Работаем с металлом, деревом и ЛДСП",
+    icon: "layers",
+  },
+  {
+    title: "Доставка и монтаж",
+    description: "Доставим конструкцию и установим на месте",
+    icon: "truck",
+  },
 ];
 ---
 
@@ -353,7 +369,7 @@ const advantages = [
       </div>
 
       <!-- Footer -->
-<div class="shrink-0 border-t border-brand-border bg-white px-5 py-4 sm:px-7">
+<div class="shrink-0 border-t border-brand-border bg-white px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-7 sm:py-4">
   <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
     <button
       id="category-modal-order"
@@ -375,25 +391,152 @@ const advantages = [
   </div>
 </div>
 
-      <!-- ADVANTAGES -->
-      <section class="border-y border-brand-border bg-white py-20">
+<!-- ADVANTAGES -->
+<section class="border-y border-brand-border bg-white py-20 lg:py-24">
 
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
-          <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <!-- Section heading -->
+    <div class="mb-12 max-w-2xl lg:mb-14">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
+        Почему мы
+      </p>
 
-            {advantages.map((advantage) => (
-  <div class="flex gap-4">
-    <p class="font-semibold leading-relaxed text-brand-text">
-      {advantage}
-    </p>
-  </div>
-))}
+      <h2 class="mt-3 text-3xl font-black tracking-tight text-brand-text sm:text-4xl lg:text-5xl">
+        Делаем надёжно<br class="hidden sm:block" />
+        и под ваши задачи
+      </h2>
+
+      <p class="mt-5 max-w-xl text-base leading-relaxed text-brand-muted">
+        Собственное производство, индивидуальные размеры и полный цикл работ —
+        от изготовления до доставки и монтажа.
+      </p>
+    </div>
+
+    <!-- Advantages -->
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+      {advantages.map((advantage) => (
+        <div
+          class="group relative flex h-full min-h-[270px] flex-col overflow-hidden rounded-2xl border border-brand-border bg-brand-bg p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-accent hover:bg-white hover:shadow-xl"
+        >
+
+          <!-- Decorative accent -->
+          <div
+            class="absolute left-0 top-0 h-full w-1 origin-bottom scale-y-0 bg-brand-accent transition-transform duration-300 group-hover:scale-y-100"
+          ></div>
+
+          <!-- Icon -->
+          <div
+            class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white text-brand-accent shadow-sm transition-all duration-300 group-hover:bg-brand-accent group-hover:text-white group-hover:shadow-md"
+          >
+
+            {advantage.icon === "factory" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                class="h-8 w-8"
+                aria-hidden="true"
+              >
+                <path d="M3 21h18" />
+                <path d="M4 21V9l6 3V8l6 3V6l4 2v13" />
+                <path d="M8 21v-4h3v4" />
+                <path d="M15 15h2" />
+                <path d="M15 18h2" />
+              </svg>
+            )}
+
+            {advantage.icon === "ruler" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                class="h-8 w-8"
+                aria-hidden="true"
+              >
+                <path d="M4 20L20 4" />
+                <path d="M7 17l-2-2" />
+                <path d="M10 14l-2-2" />
+                <path d="M13 11l-2-2" />
+                <path d="M16 8l-2-2" />
+                <path d="M19 5l-2-2" />
+                <rect
+                  x="3"
+                  y="3"
+                  width="6"
+                  height="18"
+                  rx="1"
+                  transform="rotate(45 3 3)"
+                />
+              </svg>
+            )}
+
+            {advantage.icon === "layers" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                class="h-8 w-8"
+                aria-hidden="true"
+              >
+                <path d="M12 3l9 5-9 5-9-5 9-5z" />
+                <path d="M3 12l9 5 9-5" />
+                <path d="M3 16l9 5 9-5" />
+              </svg>
+            )}
+
+            {advantage.icon === "truck" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                class="h-8 w-8"
+                aria-hidden="true"
+              >
+                <path d="M3 6h11v11H3z" />
+                <path d="M14 10h4l3 3v4h-7z" />
+                <circle cx="7" cy="19" r="2" />
+                <circle cx="18" cy="19" r="2" />
+                <path d="M14 14h7" />
+              </svg>
+            )}
+
+          </div>
+
+          <!-- Text -->
+          <div class="mt-auto pt-8">
+
+            <h3 class="text-lg font-bold leading-tight text-brand-text">
+              {advantage.title}
+            </h3>
+
+            <p class="mt-3 text-sm leading-relaxed text-brand-muted">
+              {advantage.description}
+            </p>
+
+          </div>
+
+          <!-- Arrow -->
+          <div
+            class="absolute bottom-7 right-7 translate-x-2 text-xl text-brand-border opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-brand-accent group-hover:opacity-100"
+            aria-hidden="true"
+          >
+            →
           </div>
 
         </div>
+      ))}
 
-      </section>
+    </div>
+
+  </div>
+
+</section>
 
 
       <!-- WORKS -->
