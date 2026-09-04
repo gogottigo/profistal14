@@ -4,24 +4,26 @@
   --color-brand-bg: #f7f5f1;
   --color-brand-section: #efebe5;
   --color-brand-card: #ffffff;
-
   --color-brand-text: #242321;
   --color-brand-muted: #6f6b64;
-
   --color-brand-accent: #8b5e3c;
   --color-brand-accent-dark: #70482f;
-
   --color-brand-border: #ddd8d0;
 }
 
+/* =========================
+   Base
+   ========================= */
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
   margin: 0;
-  background: #f7f5f1;
-  color: #242321;
+  background: var(--color-brand-bg);
+  color: var(--color-brand-text);
   font-family:
     Inter,
     ui-sans-serif,
@@ -30,25 +32,110 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
+/* =========================
+   Selection
+   ========================= */
+
 ::selection {
-  background: #8b5e3c;
+  background: var(--color-brand-accent);
   color: #ffffff;
 }
+
+/* =========================
+   Focus
+   ========================= */
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-brand-accent);
+  outline-offset: 3px;
+}
+
+/* =========================
+   Category cards
+   ========================= */
+
+.category-card {
+  cursor: pointer;
+}
+
+.category-card img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =========================
+   Category icons
+   ========================= */
 
 .category-icon svg {
   width: 100%;
   height: 100%;
 }
 
-.category-card {
-  cursor: pointer;
-}
+/* =========================
+   Category modal
+   ========================= */
 
 #category-modal {
   animation: category-modal-in 0.2s ease-out;
+  overscroll-behavior: contain;
 }
+
+#category-modal-panel {
+  animation: category-modal-panel-in 0.25s ease-out;
+}
+
+#category-modal-gallery {
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brand-border) transparent;
+}
+
+#category-modal-gallery::-webkit-scrollbar {
+  width: 8px;
+}
+
+#category-modal-gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#category-modal-gallery::-webkit-scrollbar-thumb {
+  background: var(--color-brand-border);
+  border-radius: 999px;
+}
+
+#category-modal-gallery::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-muted);
+}
+
+/* =========================
+   Modal gallery images
+   ========================= */
+
+#category-modal-gallery img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =========================
+   Animations
+   ========================= */
 
 @keyframes category-modal-in {
   from {
@@ -57,5 +144,51 @@ body {
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes category-modal-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   Reduced motion
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================
+   Mobile modal
+   ========================= */
+
+@media (max-width: 640px) {
+  #category-modal-panel {
+    max-height: 96vh;
+    border-radius: 1rem;
+  }
+
+  #category-modal-gallery {
+    padding: 0.75rem;
   }
 }

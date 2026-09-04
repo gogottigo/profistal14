@@ -34,17 +34,27 @@ const categories = [
     image: "/optimized/categories/cat-04-skameyki-kacheli.webp",
     title: "Скамейки и качели",
     description: "Для частных участков, парков и общественных пространств",
-    gallery: Array.from({ length: 7 }, (_, i) =>
+    gallery: Array.from({ length: 12 }, (_, i) =>
       `/optimized/products/benches/${String(i + 1).padStart(2, "0")}.webp`
     ),
   },
   {
     id: "perila",
     image: "/optimized/categories/cat-05-perila-ograzhdeniya.webp",
-    title: "Перила и ограждения",
-    description: "Перила, ограждения и фальшбалконы",
-    gallery: Array.from({ length: 31 }, (_, i) =>
+    title: "Перила",
+    description: "Металлические перила для лестниц, крылец и балконов",
+    gallery: Array.from({ length: 25 }, (_, i) =>
       `/optimized/products/perila/${String(i + 1).padStart(2, "0")}.webp`
+    ),
+  },
+  {
+    id: "ograzhdeniya",
+    image: "/optimized/categories/cat-10-ograzhdeniya.webp",
+    title: "Ограждения",
+    description: "Металлические ограждения для участков и общественных пространств",
+    svoDiscount: true,
+    gallery: Array.from({ length: 6 }, (_, i) =>
+      `/optimized/products/ograzhdeniya/${String(i + 1).padStart(2, "0")}.webp`
     ),
   },
   {
@@ -68,19 +78,27 @@ const categories = [
   {
     id: "besedka",
     image: "/optimized/categories/cat-08-garazhi-besedki.webp",
-    title: "Гаражи и беседки",
-    description: "Металлические конструкции по индивидуальным размерам",
-    gallery: Array.from({ length: 8 }, (_, i) =>
+    title: "Беседки",
+    description: "Металлические беседки по индивидуальным размерам",
+    gallery: Array.from({ length: 5 }, (_, i) =>
       `/optimized/products/besedka/${String(i + 1).padStart(2, "0")}.webp`
     ),
   },
+  {
+    id: "navesy",
+    image: "/optimized/categories/cat-09-navesy.webp",
+    title: "Навесы",
+    description: "Металлические навесы для автомобилей, домов и участков",
+    gallery: Array.from({ length: 3 }, (_, i) =>
+      `/optimized/products/navesy/${String(i + 1).padStart(2, "0")}.webp`
+    ),
+  },
 ];
-
 const advantages = [
-  "📐 Изготовление по индивидуальным размерам",
-  "🏭 Собственное производство",
-  "🚚 Доставка и монтаж",
-  "💡 От идеи до готового изделия",
+  "Собственное производство в Якутске",
+  "Изготовление по индивидуальным размерам",
+  "Работаем с металлом, деревом и ЛДСП",
+  "Доставка и монтаж",
 ];
 ---
 
@@ -239,7 +257,7 @@ const advantages = [
 
 <div
   id="catalog-grid"
-  class="grid overflow-hidden rounded-2xl border border-brand-border bg-brand-border sm:grid-cols-2 lg:grid-cols-4"
+  class="grid overflow-hidden rounded-2xl border border-brand-border bg-brand-border sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5"
   data-categories={JSON.stringify(categories)}
 >
   {categories.map((category) => (
@@ -345,7 +363,10 @@ const advantages = [
       Заказать
     </button>
 
-    <p class="text-center text-sm italic text-brand-muted sm:text-left">
+    <p
+      id="category-modal-discount"
+      class="hidden text-center text-sm italic text-brand-muted sm:text-left"
+    >
       Для участников СВО действует система скидок
     </p>
   </div>
@@ -997,7 +1018,9 @@ const advantages = [
   const categoryModalGallery = document.querySelector(
     "#category-modal-gallery > div"
   );
-
+  const categoryModalDiscount = document.querySelector(
+  "#category-modal-discount"
+);
   if (
     catalogGrid &&
     categoryModal &&
@@ -1041,6 +1064,12 @@ const advantages = [
       categoryModal.setAttribute("aria-hidden", "false");
 
       document.body.classList.add("overflow-hidden");
+      if (categoryModalDiscount) {
+  categoryModalDiscount.classList.toggle(
+    "hidden",
+    !category.svoDiscount
+  );
+}
     }
 
     function closeCategoryModal() {
