@@ -36,6 +36,69 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.paper-section {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--color-brand-border);
+  box-shadow: 0 -8px 18px -16px rgb(36 35 33 / 0.38);
+}
+
+.paper-section[data-paper-layer="2"] {
+  z-index: 2;
+}
+
+.paper-section[data-paper-layer="3"] {
+  z-index: 3;
+}
+
+.paper-section[data-paper-layer="4"] {
+  z-index: 4;
+}
+
+.paper-section[data-paper-layer="5"] {
+  z-index: 5;
+  border-top-width: 0;
+}
+
+.paper-section[data-paper-layer="6"] {
+  z-index: 6;
+  border-top-color: var(--color-brand-accent);
+}
+
+.paper-section[data-paper-layer="7"] {
+  z-index: 7;
+  border-top-color: var(--color-brand-text);
+}
+
+/* On narrow screens, overlap only the sheet edges so long sections keep flowing. */
+.paper-section[data-paper-layer]:not([data-paper-layer="1"]) {
+  margin-top: -20px;
+}
+
+@media (min-width: 768px) {
+  .paper-section {
+    position: sticky;
+    top: 0;
+    margin-top: 0;
+    box-shadow: 0 -10px 24px -18px rgb(36 35 33 / 0.42);
+  }
+
+  /* Keep native anchor navigation aligned to the section's document position. */
+  .paper-section[id]:target {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paper-section {
+    position: relative;
+    top: auto;
+    margin-top: 0;
+    box-shadow: none;
+  }
+}
+
 /* =========================
    Selection
    ========================= */
@@ -77,6 +140,220 @@ select:focus-visible {
 .category-card img {
   user-select: none;
   -webkit-user-drag: none;
+}
+
+.catalog-wave-label {
+  --wave-edge: #c99870;
+  --wave-highlight: #f5f0e8;
+}
+
+.hero-title-shimmer-layer {
+  position: absolute;
+  inset: 0;
+  display: block;
+  color: #fff;
+  pointer-events: none;
+  text-shadow: 0 0 3px rgb(255 255 255 / 0.8), 0 0 8px rgb(255 255 255 / 0.45);
+  -webkit-mask-image: linear-gradient(
+    105deg,
+    transparent 43%,
+    rgb(0 0 0 / 0.18) 47%,
+    #000 50%,
+    rgb(0 0 0 / 0.18) 53%,
+    transparent 57%
+  );
+  -webkit-mask-position: 100% 0;
+  -webkit-mask-size: 300% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: linear-gradient(
+    105deg,
+    transparent 43%,
+    rgb(0 0 0 / 0.18) 47%,
+    #000 50%,
+    rgb(0 0 0 / 0.18) 53%,
+    transparent 57%
+  );
+  mask-position: 100% 0;
+  mask-size: 300% 100%;
+  mask-repeat: no-repeat;
+}
+
+.hero-title-shimmer.is-wave-active .hero-title-shimmer-layer {
+  animation: title-light-sweep 1.4s ease-out both;
+}
+
+.hero-shimmer-button::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  background-image: linear-gradient(
+    105deg,
+    transparent 36%,
+    rgb(255 244 226 / 0.08) 44%,
+    rgb(255 238 211 / 0.34) 50%,
+    rgb(255 244 226 / 0.08) 56%,
+    transparent 64%
+  );
+  background-position: 100% 0;
+  background-size: 250% 100%;
+  background-repeat: no-repeat;
+  content: "";
+  pointer-events: none;
+}
+
+.hero-outline-shimmer-button::before {
+  position: absolute;
+  z-index: 0;
+  inset: 1px;
+  border-radius: inherit;
+  background-image: linear-gradient(
+    105deg,
+    transparent 36%,
+    rgb(255 248 238 / 0.04) 44%,
+    rgb(255 245 228 / 0.2) 50%,
+    rgb(255 248 238 / 0.04) 56%,
+    transparent 64%
+  );
+  background-position: 100% 0;
+  background-size: 250% 100%;
+  background-repeat: no-repeat;
+  content: "";
+  pointer-events: none;
+}
+
+.hero-shimmer-button.is-wave-active::before,
+.hero-outline-shimmer-button.is-wave-active::before {
+  animation: hero-surface-shimmer 1s ease-out both;
+}
+
+.title-wave-line {
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.title-wave-highlight {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+  color: inherit;
+  text-shadow: 0 0 4px rgb(255 255 255 / 0.9), 0 0 10px rgb(255 255 255 / 0.55);
+  -webkit-mask-image: linear-gradient(
+    105deg,
+    transparent 43%,
+    rgb(0 0 0 / 0.18) 47%,
+    #000 50%,
+    rgb(0 0 0 / 0.18) 53%,
+    transparent 57%
+  );
+  -webkit-mask-position: 100% 0;
+  -webkit-mask-size: 300% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: linear-gradient(
+    105deg,
+    transparent 43%,
+    rgb(0 0 0 / 0.18) 47%,
+    #000 50%,
+    rgb(0 0 0 / 0.18) 53%,
+    transparent 57%
+  );
+  mask-position: 100% 0;
+  mask-size: 300% 100%;
+  mask-repeat: no-repeat;
+}
+
+.title-wave-label.is-wave-active .title-wave-highlight {
+  animation: title-light-sweep 1.35s ease-out both;
+}
+
+.sequence-wave-title.is-wave-active .title-wave-highlight {
+  animation: title-light-sweep 1.35s ease-out both;
+}
+
+.advantage-wave-title.is-wave-active .title-wave-highlight {
+  animation: title-light-sweep 1s ease-out both;
+}
+
+.sequence-wave-title .title-wave-highlight,
+.advantage-wave-title .title-wave-highlight {
+  color: #fff0d8;
+  text-shadow: 0 0 3px rgb(255 250 240 / 0.95), 0 0 9px rgb(255 225 184 / 0.75);
+}
+
+.wave-label.is-wave-active:not(.title-wave-label) {
+  background-image: linear-gradient(
+    105deg,
+    currentColor 42%,
+    var(--wave-edge) 47%,
+    var(--wave-highlight) 50%,
+    var(--wave-edge) 53%,
+    currentColor 58%
+  );
+  background-position: 100% 0;
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: catalog-text-wave 1.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes catalog-text-wave {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes title-light-sweep {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes hero-surface-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-label.is-wave-active:not(.title-wave-label) {
+    animation: none;
+    background-image: none;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  .title-wave-highlight {
+    display: none;
+    animation: none;
+  }
+
+  .hero-title-shimmer-layer {
+    display: none;
+  }
+
+  .hero-shimmer-button.is-wave-active::before,
+  .hero-outline-shimmer-button.is-wave-active::before {
+    animation: none;
+    background-image: none;
+  }
 }
 
 /* =========================

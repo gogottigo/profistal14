@@ -135,13 +135,13 @@ const advantages = [
 
     <!-- HEADER -->
     <header class="absolute left-0 top-0 z-50 w-full">
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-2 px-5 py-5 sm:px-6 sm:py-6 lg:px-8">
 
-        <a href="/" class="group block">
+        <a href="/" class="group block shrink-0">
           <img
             src={`/profistal14_logo.webp`}
             alt="ПрофиСталь 14"
-            class="h-auto w-[190px] object-contain transition-opacity group-hover:opacity-85 sm:w-[220px]"
+            class="h-auto w-[124px] object-contain transition-opacity group-hover:opacity-85 sm:w-[180px] md:w-[220px]"
           />
         </a>
 
@@ -154,19 +154,47 @@ const advantages = [
 
         <a
           href="#order"
-          class="rounded-full bg-brand-accent px-5 py-2.5 text-sm font-bold text-white transition hover:bg-brand-accent-dark"
+          class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-brand-accent px-3 py-2 text-xs font-bold text-white transition hover:bg-brand-accent-dark sm:px-5 sm:py-2.5 sm:text-sm"
         >
           Заказать
         </a>
 
+        <button
+          id="mobile-menu-toggle"
+          type="button"
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-brand-border text-brand-text transition hover:border-brand-accent hover:text-brand-accent md:hidden"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+        >
+          <svg id="mobile-menu-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5" aria-hidden="true">
+            <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <svg id="mobile-menu-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden h-5 w-5" aria-hidden="true">
+            <path stroke-linecap="round" d="m6 6 12 12M18 6 6 18" />
+          </svg>
+        </button>
+
       </div>
+
+      <nav
+        id="mobile-navigation"
+        aria-label="Основная навигация"
+        class="absolute left-4 right-4 top-full hidden rounded-2xl border border-brand-border bg-brand-bg p-2 shadow-xl md:hidden"
+        inert
+      >
+        <a href="#catalog" class="block rounded-xl px-4 py-3 font-medium text-brand-text transition hover:bg-brand-section">Изделия</a>
+        <a href="#works" class="block rounded-xl px-4 py-3 font-medium text-brand-text transition hover:bg-brand-section">Работы</a>
+        <a href="#about" class="block rounded-xl px-4 py-3 font-medium text-brand-text transition hover:bg-brand-section">О компании</a>
+        <a href="#contacts" class="block rounded-xl px-4 py-3 font-medium text-brand-text transition hover:bg-brand-section">Контакты</a>
+      </nav>
     </header>
 
 
     <!-- HERO -->
     <main>
 
-<section class="relative flex min-h-screen items-center overflow-hidden bg-brand-bg">
+<section data-paper-layer="1" class="paper-section relative flex min-h-screen items-center overflow-hidden bg-brand-bg">
 
   <!-- Hero background image -->
   <div class="pointer-events-none absolute inset-0">
@@ -192,11 +220,13 @@ const advantages = [
       "
     ></div>
 
-    <div class="absolute -right-40 top-1/4 h-[500px] w-[500px] rounded-full bg-brand-accent/10 blur-[140px]"></div>
+    <div
+      class="absolute -right-40 top-1/4 h-[500px] w-[500px] rounded-full bg-brand-accent/10 blur-[140px]"
+    ></div>
   </div>
 
   <!-- Content -->
-  <div class="relative mx-auto w-full max-w-7xl px-6 py-32 lg:px-8">
+  <div class="relative mx-auto w-full max-w-7xl px-5 py-32 sm:px-6 lg:px-8">
 
     <div class="max-w-4xl">
 
@@ -205,31 +235,36 @@ const advantages = [
         Изделия из металла
       </div>
 
-<h1 class="text-4xl font-black leading-[1.20] tracking-tight sm:text-7xl lg:text-8xl">
+<h1 class="hero-title-shimmer relative min-w-0 max-w-full text-[clamp(1.875rem,9vw,2.25rem)] font-black leading-[1.12] tracking-tight sm:text-7xl lg:text-8xl">
   МЕТАЛЛ,<br>
   КОТОРЫЙ
-  <span class="text-brand-accent whitespace-nowrap">РАБОТАЕТ.</span>
+  <span class="block text-brand-accent sm:inline">РАБОТАЕТ.</span>
+  <span class="hero-title-shimmer-layer" aria-hidden="true">
+    МЕТАЛЛ,<br>
+    КОТОРЫЙ
+    <span class="block sm:inline">РАБОТАЕТ.</span>
+  </span>
 </h1>
 
-      <p class="mt-8 max-w-xl text-lg leading-relaxed text-brand-muted">
+      <p class="mt-6 w-full min-w-0 max-w-xl break-words text-base leading-relaxed text-brand-muted sm:mt-8 sm:text-lg">
         Изготавливаем изделия и конструкции из металла
         по вашим размерам и проектам — от небольшой
         детали до комплексного объекта.
       </p>
 
-      <div class="mt-10 flex flex-wrap gap-4">
+      <div class="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
         <a
           href="#catalog"
-          class="rounded-full bg-brand-accent px-7 py-4 font-bold text-white transition hover:bg-brand-accent-dark"
+          class="hero-shimmer-button relative isolate inline-flex min-h-14 w-full items-center justify-center overflow-hidden rounded-full bg-brand-accent px-5 py-3 text-center font-bold text-white transition hover:bg-brand-accent-dark sm:w-auto sm:px-7 sm:py-4"
         >
-          Смотреть изделия
+          <span class="relative z-10">Смотреть изделия</span>
         </a>
 
         <a
           href="#order"
-          class="rounded-full border border-brand-border px-7 py-4 font-bold text-brand-text transition hover:border-brand-accent hover:text-brand-accent"
+          class="hero-outline-shimmer-button relative isolate inline-flex min-h-14 w-full items-center justify-center overflow-hidden rounded-full border border-brand-border px-5 py-3 text-center font-bold text-brand-text transition hover:border-brand-accent hover:text-brand-accent sm:w-auto sm:px-7 sm:py-4"
         >
-          Рассчитать стоимость
+          <span class="relative z-10">Рассчитать стоимость</span>
         </a>
       </div>
 
@@ -246,9 +281,9 @@ const advantages = [
 
 
       <!-- CATALOG -->
-      <section id="catalog" class="bg-brand-section py-24 lg:py-32">
+      <section id="catalog" data-paper-layer="2" class="paper-section bg-brand-section pt-16 pb-24 lg:pt-24 lg:pb-32">
 
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl px-6 md:pb-10 lg:px-8">
 
           <div class="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
 
@@ -257,8 +292,8 @@ const advantages = [
                 Каталог
               </p>
 
-              <h2 class="text-4xl font-black tracking-tight sm:text-5xl">
-                ЧТО МЫ ДЕЛАЕМ
+              <h2 class="sequence-wave-title text-4xl font-black tracking-tight sm:text-5xl">
+                <span class="title-wave-line">ЧТО МЫ ДЕЛАЕМ<span class="title-wave-highlight" aria-hidden="true">ЧТО МЫ ДЕЛАЕМ</span></span>
               </h2>
             </div>
 
@@ -273,7 +308,7 @@ const advantages = [
 
 <div
   id="catalog-grid"
-  class="grid overflow-hidden rounded-2xl border border-brand-border bg-brand-border sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5"
+  class="grid overflow-hidden rounded-t-2xl bg-white sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5"
   data-categories={JSON.stringify(categories)}
 >
   {categories.map((category) => (
@@ -303,7 +338,7 @@ const advantages = [
         </p>
 
         <div class="mt-6 flex items-center justify-between">
-          <span class="text-sm font-bold text-brand-accent">
+          <span class="wave-label catalog-wave-label text-sm font-bold text-brand-accent">
             Смотреть работы
           </span>
 
@@ -322,6 +357,11 @@ const advantages = [
   id="category-modal"
   class="fixed inset-0 z-[100] hidden"
   aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="category-modal-title"
+  aria-describedby="category-modal-count"
+  tabindex="-1"
 >
   <!-- Background -->
   <div
@@ -353,9 +393,21 @@ const advantages = [
           id="category-modal-close"
           type="button"
           aria-label="Закрыть"
-          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-bg text-2xl leading-none text-brand-text transition hover:bg-brand-border"
+          class="grid box-border h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-bg p-0 text-brand-text transition hover:bg-brand-border"
         >
-          ×
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 24 24"
+            class="block h-5 w-5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
         </button>
       </div>
 
@@ -392,7 +444,7 @@ const advantages = [
 </div>
 
 <!-- ADVANTAGES -->
-<section class="border-y border-brand-border bg-white py-20 lg:py-24">
+<section data-paper-layer="3" class="paper-section border-y border-brand-border bg-white py-20 lg:py-24">
 
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -402,9 +454,9 @@ const advantages = [
         Почему мы
       </p>
 
-      <h2 class="mt-3 text-3xl font-black tracking-tight text-brand-text sm:text-4xl lg:text-5xl">
-        <span class="block">Делаем надёжно</span>
-        <span class="block">и под ваши задачи</span>
+      <h2 class="sequence-wave-title mt-3 text-3xl font-black tracking-tight text-brand-text sm:text-4xl lg:text-5xl">
+        <span class="title-wave-line">Делаем надёжно<span class="title-wave-highlight" aria-hidden="true">Делаем надёжно</span></span>
+        <span class="title-wave-line">и под ваши задачи<span class="title-wave-highlight" aria-hidden="true">и под ваши задачи</span></span>
       </h2>
 
       <p class="mt-5 max-w-xl text-base leading-relaxed text-brand-muted">
@@ -418,12 +470,12 @@ const advantages = [
 
       {advantages.map((advantage) => (
         <div
-          class="group flex items-center gap-5 px-1 py-6 transition-colors duration-300 hover:bg-brand-bg sm:gap-6 sm:px-3"
+          class="flex items-center gap-5 px-1 py-6 sm:gap-6 sm:px-3"
         >
 
           <!-- Icon -->
           <div
-            class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-brand-bg text-brand-accent transition-all duration-300 group-hover:bg-brand-accent group-hover:text-white sm:h-16 sm:w-16"
+            class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-brand-bg text-brand-accent sm:h-16 sm:w-16"
           >
 
             {advantage.icon === "factory" && (
@@ -505,8 +557,8 @@ const advantages = [
 
           <!-- Text -->
           <div class="min-w-0 flex-1">
-            <h3 class="text-base font-bold leading-tight text-brand-text sm:text-lg">
-              {advantage.title}
+            <h3 class="advantage-wave-title text-base font-bold leading-tight text-brand-text sm:text-lg">
+              <span class="title-wave-line">{advantage.title}<span class="title-wave-highlight" aria-hidden="true">{advantage.title}</span></span>
             </h3>
 
             <p class="mt-1.5 text-sm leading-relaxed text-brand-muted">
@@ -516,7 +568,7 @@ const advantages = [
 
           <!-- Arrow -->
           <div
-            class="hidden shrink-0 translate-x-1 text-xl text-brand-border transition-all duration-300 group-hover:translate-x-0 group-hover:text-brand-accent sm:block"
+            class="hidden shrink-0 translate-x-1 text-xl text-brand-border sm:block"
             aria-hidden="true"
           >
             →
@@ -533,7 +585,7 @@ const advantages = [
 
 
       <!-- WORKS -->
-      <section id="works" class="bg-brand-bg py-24 lg:py-32">
+      <section id="works" data-paper-layer="4" class="paper-section bg-brand-bg py-24 lg:py-32">
 
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -542,8 +594,8 @@ const advantages = [
               Портфолио
             </p>
 
-            <h2 class="text-4xl font-black tracking-tight sm:text-5xl">
-              НАШИ РАБОТЫ
+            <h2 class="sequence-wave-title text-4xl font-black tracking-tight sm:text-5xl">
+              <span class="title-wave-line">НАШИ РАБОТЫ<span class="title-wave-highlight" aria-hidden="true">НАШИ РАБОТЫ</span></span>
             </h2>
           </div>
 
@@ -568,7 +620,7 @@ const advantages = [
 
   <!-- Контент -->
   <div class="relative z-10">
-    <p class="text-sm font-semibold text-brand-accent">
+    <p class="text-sm font-semibold text-[#F5F0E8]">
       В цеху
     </p>
 
@@ -602,7 +654,7 @@ const advantages = [
 
   <!-- Контент -->
   <div class="relative z-10">
-    <p class="text-sm font-semibold text-brand-accent">
+    <p class="text-sm font-semibold text-[#F5F0E8]">
       На объектах
     </p>
 
@@ -624,27 +676,42 @@ const advantages = [
       </section>
 <div
   id="gallery-modal"
-  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+  class="fixed inset-0 z-[60] hidden items-start justify-center overflow-y-auto bg-black/80 p-2 backdrop-blur-sm sm:items-center sm:p-4"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="gallery-title"
+  tabindex="-1"
 >
   <div
     id="gallery-content"
-    class="relative w-full max-w-5xl rounded-2xl bg-brand-section p-5 shadow-2xl"
+    class="relative my-auto max-h-[calc(100dvh-1rem)] w-full max-w-5xl overflow-y-auto overscroll-contain rounded-2xl bg-brand-section p-4 shadow-2xl sm:max-h-[calc(100dvh-2rem)] sm:p-5"
   >
 
-    <!-- Закрыть -->
-    <button
-      id="gallery-close"
-      type="button"
-      class="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-xl text-white transition hover:bg-brand-accent"
-      aria-label="Закрыть"
-    >
-      ×
-    </button>
+    <div class="sticky top-0 z-20 -mx-4 -mt-4 mb-4 flex shrink-0 items-center justify-between gap-4 bg-brand-section p-4 sm:-mx-5 sm:-mt-5 sm:p-5">
+      <h3 id="gallery-title" class="text-2xl font-bold"></h3>
 
-    <h3
-      id="gallery-title"
-      class="mb-5 pr-12 text-2xl font-bold"
-    ></h3>
+      <button
+        id="gallery-close"
+        type="button"
+        class="grid box-border h-10 w-10 shrink-0 place-items-center rounded-full bg-black/50 p-0 text-white transition hover:bg-brand-accent"
+        aria-label="Закрыть галерею"
+      >
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          viewBox="0 0 24 24"
+          class="block h-5 w-5 shrink-0"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+    </div>
 
     <!-- Большая картинка -->
     <div class="relative">
@@ -652,27 +719,55 @@ const advantages = [
         id="gallery-image"
         src=""
         alt=""
-        class="mx-auto max-h-[65vh] w-full rounded-xl object-contain"
+        class="mx-auto max-h-[55vh] w-full rounded-xl object-contain sm:max-h-[65vh]"
       />
 
       <!-- Назад -->
       <button
         id="gallery-prev"
         type="button"
-        class="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-2xl text-white transition hover:bg-brand-accent"
+        aria-label="Предыдущая фотография"
+        class="absolute left-3 top-1/2 grid box-border h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-black/60 p-0 text-white transition hover:bg-brand-accent"
       >
-        ‹
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          viewBox="0 0 24 24"
+          class="block h-5 w-5 shrink-0"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M19 12H5m7 7-7-7 7-7" />
+        </svg>
       </button>
 
       <!-- Вперёд -->
       <button
         id="gallery-next"
         type="button"
-        class="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-2xl text-white transition hover:bg-brand-accent"
+        aria-label="Следующая фотография"
+        class="absolute right-3 top-1/2 grid box-border h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-black/60 p-0 text-white transition hover:bg-brand-accent"
       >
-        ›
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          viewBox="0 0 24 24"
+          class="block h-5 w-5 shrink-0"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14m-7-7 7 7-7 7" />
+        </svg>
       </button>
     </div>
+
+    <p id="gallery-position" class="sr-only" aria-live="polite" aria-atomic="true"></p>
 
     <!-- Миниатюры -->
     <div
@@ -686,7 +781,8 @@ const advantages = [
  <!-- ABOUT -->
 <section
   id="about"
-  class="relative overflow-hidden bg-white py-24 lg:py-32"
+  data-paper-layer="5"
+  class="paper-section relative overflow-hidden bg-white py-24 lg:py-32"
 >
 
   <!-- Background image -->
@@ -707,19 +803,18 @@ const advantages = [
 
       <!-- Left side -->
       <div class="py-8">
-        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#E9C5A2]">
           О компании
         </p>
 
-        <h2 class="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
-          ОТ ИДЕИ
-          <br />
-          ДО РЕАЛИЗАЦИИ
+        <h2 class="wave-label title-wave-label text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <span class="title-wave-line">ОТ ИДЕИ<span class="title-wave-highlight" aria-hidden="true">ОТ ИДЕИ</span></span>
+          <span class="title-wave-line">ДО РЕАЛИЗАЦИИ<span class="title-wave-highlight" aria-hidden="true">ДО РЕАЛИЗАЦИИ</span></span>
         </h2>
       </div>
 
       <!-- Right side -->
-      <div class="border border-white/20 bg-black/45 p-8 backdrop-blur-sm lg:p-10">
+      <div class="rounded-xl border border-white/20 bg-black/55 p-8 backdrop-blur-[12px] lg:p-10">
 
         <div class="text-lg leading-relaxed text-white/80">
 
@@ -767,7 +862,7 @@ const advantages = [
 
 
       <!-- ORDER -->
-      <section id="order" class="bg-brand-accent py-24 text-white lg:py-32">
+      <section id="order" data-paper-layer="6" class="paper-section bg-brand-accent py-24 text-white lg:py-32">
 
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -777,10 +872,9 @@ const advantages = [
               Есть идея?
             </p>
 
-            <h2 class="mt-4 text-5xl font-black tracking-tight sm:text-7xl">
-              ДАВАЙТЕ
-              <br />
-              ЕЁ РЕАЛИЗУЕМ.
+            <h2 class="wave-label title-wave-label mt-4 text-5xl font-black tracking-tight text-white sm:text-7xl">
+              <span class="title-wave-line">ДАВАЙТЕ<span class="title-wave-highlight" aria-hidden="true">ДАВАЙТЕ</span></span>
+              <span class="title-wave-line">ЕЁ РЕАЛИЗУЕМ.<span class="title-wave-highlight" aria-hidden="true">ЕЁ РЕАЛИЗУЕМ.</span></span>
             </h2>
 
             <p class="mt-6 max-w-xl text-lg text-white/75">
@@ -804,71 +898,99 @@ const advantages = [
               target="form-submit-frame"
             >
 
-              <input
-                type="text"
-                name="name"
-                placeholder="Ваше имя *"
-                required
-                autocomplete="name"
-                class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
-              />
+              <label class="block space-y-2 text-sm font-semibold" for="order-name">
+                <span>Ваше имя <span aria-hidden="true">*</span></span>
+                <input
+                  id="order-name"
+                  type="text"
+                  name="name"
+                  placeholder="Например, Иван"
+                  required
+                  autocomplete="name"
+                  class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-base font-normal text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+                />
+              </label>
 
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Номер телефона *"
-                required
-                autocomplete="tel"
-                class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
-              />
+              <label class="block space-y-2 text-sm font-semibold" for="order-phone">
+                <span>Номер телефона <span aria-hidden="true">*</span></span>
+                <input
+                  id="order-phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="Например, +7 999 123-45-67"
+                  required
+                  autocomplete="tel"
+                  class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-base font-normal text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+                />
+              </label>
 
-              <select
-                name="product"
-                required
-                class="w-full appearance-none rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white outline-none focus:ring-2 focus:ring-white"
-              >
-                <option value="" class="text-brand-text">Что хотите заказать? *</option>
+              <label class="block space-y-2 text-sm font-semibold" for="order-product">
+                <span>Что хотите заказать? <span aria-hidden="true">*</span></span>
+                <select
+                  id="order-product"
+                  name="product"
+                  required
+                  class="w-full appearance-none rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-base font-normal text-white outline-none focus:ring-2 focus:ring-white"
+                >
+                  <option value="" class="text-brand-text">Выберите изделие</option>
 
-                {categories.map((category) => (
-                  <option value={category.title} class="text-brand-text">
-                    {category.title}
+                  {categories.map((category) => (
+                    <option value={category.title} class="text-brand-text">
+                      {category.title}
+                    </option>
+                  ))}
+
+                  <option value="Другое" class="text-brand-text">
+                    Другое
                   </option>
-                ))}
+                </select>
+              </label>
 
-                <option value="Другое" class="text-brand-text">
-                  Другое
-                </option>
-              </select>
+              <label class="block space-y-2 text-sm font-semibold" for="order-size">
+                <span>Размеры <span class="font-normal text-white/70">(необязательно)</span></span>
+                <input
+                  id="order-size"
+                  type="text"
+                  name="size"
+                  placeholder="Например, 2 × 3 м"
+                  class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-base font-normal text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+                />
+              </label>
 
-              <input
-                type="text"
-                name="size"
-                placeholder="Размеры"
-                class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
-              />
+              <label class="block space-y-2 text-sm font-semibold" for="order-quantity">
+                <span>Количество <span class="font-normal text-white/70">(необязательно)</span></span>
+                <input
+                  id="order-quantity"
+                  type="number"
+                  name="quantity"
+                  min="1"
+                  placeholder="Например, 1"
+                  class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-base font-normal text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+                />
+              </label>
 
-              <input
-                type="number"
-                name="quantity"
-                min="1"
-                placeholder="Количество"
-                class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
-              />
+              <label class="block space-y-2 text-sm font-semibold" for="order-comment">
+                <span>Комментарий <span class="font-normal text-white/70">(необязательно)</span></span>
+                <textarea
+                  id="order-comment"
+                  name="comment"
+                  rows="4"
+                  placeholder="Расскажите подробнее о заказе"
+                  class="w-full resize-none rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-base font-normal text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+                ></textarea>
+              </label>
 
-              <textarea
-                name="comment"
-                rows="4"
-                placeholder="Расскажите подробнее о заказе"
-                class="w-full resize-none rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
-              ></textarea>
-
-              <input
-                type="email"
-                name="email"
-                placeholder="E-mail (необязательно)"
-                autocomplete="email"
-                class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
-              />
+              <label class="block space-y-2 text-sm font-semibold" for="order-email">
+                <span>E-mail <span class="font-normal text-white/70">(необязательно)</span></span>
+                <input
+                  id="order-email"
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="name@example.com"
+                  class="w-full rounded-xl border border-white/10 bg-white/15 px-5 py-4 text-base font-normal text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-white"
+                />
+              </label>
 
               <button
                 id="order-submit"
@@ -881,7 +1003,14 @@ const advantages = [
               <p
                 id="order-status"
                 class="hidden rounded-xl bg-white/15 px-5 py-4 text-sm font-semibold"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
               ></p>
+
+              <p class="text-sm leading-relaxed text-white/75">
+                Контактные данные и сведения о заказе используются, чтобы ответить на вашу заявку. Не указывайте лишние персональные данные.
+              </p>
 
             </form>
 
@@ -895,100 +1024,195 @@ const advantages = [
 
 
     <!-- FOOTER -->
-    <footer id="contacts" class="bg-brand-text py-12 text-white">
+    <footer id="contacts" data-paper-layer="7" class="paper-section bg-brand-text py-12 text-white">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid min-w-0 gap-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr_1.2fr] lg:gap-16">
+          <div class="min-w-0">
+            <img
+              src={`/profistal14_box_logo.webp`}
+              alt="ПрофиСталь 14"
+              class="h-36 w-auto sm:h-48"
+            />
+            <p class="mt-3 text-sm text-white/70">Изделия из металла на заказ</p>
+            <p class="mt-1 text-sm text-white/50">Якутск</p>
+          </div>
 
-      <div class="mx-auto flex max-w-7xl flex-col gap-8 px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
+          <nav aria-label="Навигация в подвале" class="min-w-0">
+            <h2 class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-brand-accent">Навигация</h2>
+            <ul class="flex flex-col items-start gap-3 text-sm text-white/70">
+              <li><a href="#catalog" class="transition hover:text-brand-accent">Каталог</a></li>
+              <li><a href="#works" class="transition hover:text-brand-accent">Наши работы</a></li>
+              <li><a href="#about" class="transition hover:text-brand-accent">О компании</a></li>
+              <li><a href="#contacts" class="transition hover:text-brand-accent">Контакты</a></li>
+            </ul>
+          </nav>
 
-  <div>
-    <img
-      src={`/profistal14_box_logo.webp`}
-      alt="ПрофиСталь 14"
-      class="h-48 w-auto"
-    />
-  </div>
-
-
-        <div class="text-sm text-white/50 lg:text-right">
-
-<p>
-  📍 Улица Тальниковая, 1/4<br />
-  Марха м-н, Якутск, 677901
-</p>
-
-<p class="mt-4 w-full text-left">
-  <a
-    href="tel:+79143000818"
-    class="transition hover:text-brand-accent"
-  >
-    ☎️ +7 (914) 300-08-18
-  </a>
-</p>
-
-<div class="mt-4 flex flex-col items-start gap-2">
-  <a
-    href="https://wa.me/79143000818?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%0A%0A%D0%9F%D0%B8%D1%88%D1%83%20%D0%B8%D0%B7%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="transition hover:text-brand-accent"
-  >
-    🟢 Написать в WhatsApp →
-  </a>
-
-  <a
-    href="https://max.ru/u/f9LHodD0cOITCI8gwaBHfZSrOMeiWprSrqpOTy3X9Ti645JbFQfa3i55JjY"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="transition hover:text-brand-accent"
-  >
-    Ⓜ️ Написать в MAX →
-  </a>
-</div>
-
-<p class="mt-4 text-xs text-white/30">
-  © 2026 ПрофиСталь 14
-</p>
-
+          <div class="min-w-0 text-sm text-white/60">
+            <h2 class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-brand-accent">Контакты</h2>
+            <address class="not-italic leading-relaxed">
+              Улица Тальниковая, 1/4<br />
+              Марха м-н, Якутск, 677901
+            </address>
+            <a href="tel:+79143000818" class="mt-4 inline-flex min-h-10 items-center gap-2 transition hover:text-brand-accent">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-[18px] w-[18px] shrink-0 text-brand-accent">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 16.42v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 1.12 3.7 2 2 0 0 1 3.11 1.52h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.41a16 16 0 0 0 6 6l1.25-1.25a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.42z" />
+              </svg>
+              <span>+7 (914) 300-08-18</span>
+            </a>
+            <div class="mt-3 flex flex-col items-start gap-1">
+              <a
+                href="https://wa.me/79143000818?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%0A%0A%D0%9F%D0%B8%D1%88%D1%83%20%D0%B8%D0%B7%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex min-h-10 items-center gap-2 transition hover:text-brand-accent"
+              >
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="h-[18px] w-[18px] shrink-0 text-brand-accent">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M20.2 11.8a8.2 8.2 0 0 1-12.1 7.2L3 20l1.1-4.9a8.2 8.2 0 1 1 16.1-3.3Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.5.6c-.2.2-.2.4 0 .6.5.9 1.3 1.6 2.2 2.1.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.2l1.5.7c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.4.4-1 .6-1.6.5-1-.1-2.2-.7-3.5-1.8-1.1-.9-2-2.1-2.4-3.1-.4-1-.3-1.9.3-2.8.1 0 .1 0 .2 0Z" />
+                </svg>
+                <span>Написать в WhatsApp →</span>
+              </a>
+              <a
+                href="https://max.ru/u/f9LHodD0cOITCI8gwaBHfZSrOMeiWprSrqpOTy3X9Ti645JbFQfa3i55JjY"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex min-h-10 items-center gap-2 transition hover:text-brand-accent"
+              >
+                <span aria-hidden="true" class="inline-flex h-[18px] w-[18px] shrink-0 items-center justify-center text-[15px] font-black leading-none text-brand-accent">M</span>
+                <span>Написать в MAX →</span>
+              </a>
+            </div>
+          </div>
         </div>
 
+        <div class="mt-10 flex flex-col gap-3 border-t border-white/15 pt-5 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+          <span>© 2026 ПрофиСталь 14</span>
+          <a
+            href="https://gogottigo.github.io/TedRogueWorks/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Сайт разработчика TedRogueWorks"
+            class="group inline-flex min-h-10 w-fit items-center text-white/70 transition-colors hover:text-brand-accent"
+          >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 72 24"
+              fill="none"
+              class="h-6 w-[54px] shrink-0 transition-colors"
+            >
+              <path d="M2 4h14M9 4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              <path d="M23 20V4h7a5.5 5.5 0 0 1 0 11h-7m6 0 7 5" stroke="#F3EDE5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="m45 4 5 16 7-11 7 11 5-16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
       </div>
-
     </footer>
 
 
     <script>
+      const mobileMenuToggle = document.querySelector("#mobile-menu-toggle");
+      const mobileNavigation = document.querySelector("#mobile-navigation");
+      const mobileMenuIconOpen = document.querySelector("#mobile-menu-icon-open");
+      const mobileMenuIconClose = document.querySelector("#mobile-menu-icon-close");
+
+      function setMobileMenuOpen(open) {
+        if (!mobileMenuToggle || !mobileNavigation) return;
+
+        mobileMenuToggle.setAttribute("aria-expanded", String(open));
+        mobileMenuToggle.setAttribute(
+          "aria-label",
+          open ? "Закрыть меню" : "Открыть меню"
+        );
+        mobileNavigation.classList.toggle("hidden", !open);
+        mobileNavigation.inert = !open;
+        mobileMenuIconOpen?.classList.toggle("hidden", open);
+        mobileMenuIconClose?.classList.toggle("hidden", !open);
+      }
+
+      mobileMenuToggle?.addEventListener("click", () => {
+        const isOpen = mobileMenuToggle.getAttribute("aria-expanded") === "true";
+        setMobileMenuOpen(!isOpen);
+      });
+
+      mobileNavigation?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setMobileMenuOpen(false));
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.key === "Escape" &&
+          mobileMenuToggle?.getAttribute("aria-expanded") === "true"
+        ) {
+          setMobileMenuOpen(false);
+          mobileMenuToggle.focus();
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.matchMedia("(min-width: 768px)").matches) {
+          setMobileMenuOpen(false);
+        }
+      });
+
       const form = document.querySelector("#order-form");
       const submitButton = document.querySelector("#order-submit");
       const status = document.querySelector("#order-status");
       const frame = document.querySelector("#form-submit-frame");
 
       let submitted = false;
+      let submissionTimeout;
+
+      function finishUnconfirmedSubmission() {
+        if (!submitted || !form || !submitButton || !status) return;
+
+        submitted = false;
+        window.clearTimeout(submissionTimeout);
+        form.removeAttribute("aria-busy");
+        submitButton.disabled = false;
+        submitButton.textContent = "Отправить заявку";
+        status.textContent =
+          "Не удалось подтвердить, принял ли сервис заявку. Ваши данные сохранены в форме. Если вы не получите ответа, свяжитесь с нами по телефону.";
+        status.classList.remove("hidden");
+      }
+
+      function finishSubmittedRequest() {
+        if (!submitted || !form || !submitButton || !status) return;
+
+        submitted = false;
+        window.clearTimeout(submissionTimeout);
+        form.removeAttribute("aria-busy");
+        form.reset();
+        submitButton.disabled = false;
+        submitButton.textContent = "Отправить заявку";
+        status.textContent =
+          "Ваша заявка принята! Мы свяжемся с вами для уточнения деталей.";
+        status.classList.remove("hidden");
+      }
 
       form?.addEventListener("submit", () => {
         if (!form || !submitButton || !status) return;
 
         submitted = true;
-
+        form.setAttribute("aria-busy", "true");
         submitButton.disabled = true;
         submitButton.textContent = "Отправляем...";
-
-        status.classList.add("hidden");
-        status.textContent = "";
+        status.textContent = "Отправляем заявку. Пожалуйста, подождите…";
+        status.classList.remove("hidden");
+        window.clearTimeout(submissionTimeout);
+        submissionTimeout = window.setTimeout(
+          finishUnconfirmedSubmission,
+          20000
+        );
       });
 
       frame?.addEventListener("load", () => {
-        if (!submitted || !form || !submitButton || !status) return;
+        // Ignore the iframe's initial load; this only signals a response after submission.
+        finishSubmittedRequest();
+      });
 
-        submitted = false;
-
-        form.reset();
-
-        submitButton.disabled = false;
-        submitButton.textContent = "Отправить заявку";
-
-        status.textContent =
-          "Заявка отправлена! Мы свяжемся с вами для уточнения деталей.";
-
-        status.classList.remove("hidden");
+      frame?.addEventListener("error", () => {
+        finishUnconfirmedSubmission();
       });
     </script>
 <script>
@@ -1034,6 +1258,7 @@ const advantages = [
 
   const modal = document.querySelector("#gallery-modal");
   const image = document.querySelector("#gallery-image");
+  const position = document.querySelector("#gallery-position");
   const title = document.querySelector("#gallery-title");
   const thumbnails = document.querySelector("#gallery-thumbnails");
   const close = document.querySelector("#gallery-close");
@@ -1042,6 +1267,88 @@ const advantages = [
 
   let currentGallery = null;
   let currentIndex = 0;
+  let previousFocus = null;
+  let previousBodyOverflow = "";
+  let inertedElements = [];
+
+  thumbnails?.addEventListener(
+    "wheel",
+    (event) => {
+      const maxScrollLeft = thumbnails.scrollWidth - thumbnails.clientWidth;
+      if (maxScrollLeft <= 0) return;
+
+      // Leave pure horizontal trackpad gestures to the browser's native scrolling.
+      if (event.deltaX !== 0 && event.deltaY === 0) return;
+
+      const delta = event.deltaX || event.deltaY;
+      if (delta === 0) return;
+
+      const canScrollInDirection =
+        delta < 0 ? thumbnails.scrollLeft > 0 : thumbnails.scrollLeft < maxScrollLeft;
+      if (!canScrollInDirection) return;
+
+      const unit =
+        event.deltaMode === WheelEvent.DOM_DELTA_LINE
+          ? Number.parseFloat(getComputedStyle(thumbnails).lineHeight) || 16
+          : event.deltaMode === WheelEvent.DOM_DELTA_PAGE
+            ? thumbnails.clientWidth
+            : 1;
+
+      event.preventDefault();
+      thumbnails.scrollLeft += delta * unit;
+    },
+    { passive: false }
+  );
+
+  function inertDialogBackground(dialog) {
+    const inerted = [];
+    let branch = dialog;
+
+    while (branch && branch !== document.body) {
+      const parent = branch.parentElement;
+      if (!parent) break;
+
+      for (const sibling of parent.children) {
+        if (sibling === branch) continue;
+        inerted.push([sibling, sibling.inert]);
+        sibling.inert = true;
+      }
+
+      branch = parent;
+    }
+
+    return inerted;
+  }
+
+  function focusableElements(container) {
+    return [...container.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )].filter((element) => !element.hasAttribute("hidden"));
+  }
+
+  function activateGalleryDialog(trigger) {
+    previousFocus =
+      trigger instanceof HTMLElement ? trigger : document.activeElement;
+    previousBodyOverflow = document.body.style.overflow;
+    inertedElements = inertDialogBackground(modal);
+
+    modal.inert = false;
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    close.focus();
+  }
+
+  function deactivateGalleryDialog() {
+    modal.setAttribute("aria-hidden", "true");
+    inertedElements.forEach(([element, wasInert]) => {
+      element.inert = wasInert;
+    });
+    inertedElements = [];
+    document.body.style.overflow = previousBodyOverflow;
+
+    if (previousFocus instanceof HTMLElement) previousFocus.focus();
+    previousFocus = null;
+  }
 
   function showImage(index) {
     if (!currentGallery) return;
@@ -1051,6 +1358,8 @@ const advantages = [
       currentGallery.images.length;
 
     image.src = currentGallery.images[currentIndex];
+    image.alt = `${currentGallery.title} — фотография ${currentIndex + 1} из ${currentGallery.images.length}`;
+    position.textContent = `Фотография ${currentIndex + 1} из ${currentGallery.images.length}`;
 
     thumbnails.innerHTML = "";
 
@@ -1058,6 +1367,11 @@ const advantages = [
       const thumb = document.createElement("button");
 
       thumb.type = "button";
+      thumb.setAttribute(
+        "aria-label",
+        `Фотография ${i + 1} из ${currentGallery.images.length}`
+      );
+      thumb.setAttribute("aria-pressed", String(i === currentIndex));
       thumb.className =
         "h-20 w-28 shrink-0 overflow-hidden rounded-lg border-2 transition";
 
@@ -1083,7 +1397,7 @@ const advantages = [
     });
   }
 
-  function openGallery(name) {
+  function openGallery(name, trigger) {
     currentGallery = galleries[name];
 
     if (!currentGallery) return;
@@ -1095,22 +1409,20 @@ const advantages = [
 
     modal.classList.remove("hidden");
     modal.classList.add("flex");
-
-    document.body.style.overflow = "hidden";
+    activateGalleryDialog(trigger);
   }
 
   function closeGallery() {
     modal.classList.add("hidden");
     modal.classList.remove("flex");
-
-    document.body.style.overflow = "";
+    deactivateGalleryDialog();
 
     currentGallery = null;
   }
 
   document.querySelectorAll("[data-gallery]").forEach((button) => {
     button.addEventListener("click", () => {
-      openGallery(button.dataset.gallery);
+      openGallery(button.dataset.gallery, button);
     });
   });
 
@@ -1134,14 +1446,33 @@ const advantages = [
     if (!currentGallery) return;
 
     if (event.key === "Escape") {
+      event.preventDefault();
       closeGallery();
+      return;
+    }
+
+    if (event.key === "Tab") {
+      const focusable = focusableElements(modal);
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+      return;
     }
 
     if (event.key === "ArrowLeft") {
+      event.preventDefault();
       showImage(currentIndex - 1);
     }
 
     if (event.key === "ArrowRight") {
+      event.preventDefault();
       showImage(currentIndex + 1);
     }
   });
@@ -1153,6 +1484,7 @@ const advantages = [
   const categoryModalBackdrop = document.querySelector(
     "#category-modal-backdrop"
   );
+  const categoryModalPanel = document.querySelector("#category-modal-panel");
   const categoryModalClose = document.querySelector("#category-modal-close");
   const categoryModalOrder = document.querySelector("#category-modal-order");
   const categoryModalTitle = document.querySelector("#category-modal-title");
@@ -1163,9 +1495,67 @@ const advantages = [
   const categoryModalDiscount = document.querySelector(
   "#category-modal-discount"
 );
+
+  let previousCategoryFocus = null;
+  let previousCategoryBodyOverflow = "";
+  let inertedCategorySiblings = [];
+
+  function inertCategoryDialogBackground(dialog) {
+    const inerted = [];
+    let branch = dialog;
+
+    while (branch && branch !== document.body) {
+      const parent = branch.parentElement;
+      if (!parent) break;
+
+      for (const sibling of parent.children) {
+        if (sibling === branch) continue;
+        inerted.push([sibling, sibling.inert]);
+        sibling.inert = true;
+      }
+
+      branch = parent;
+    }
+
+    return inerted;
+  }
+
+  function categoryModalFocusableElements() {
+    return [...categoryModal.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )].filter((element) => !element.hasAttribute("hidden"));
+  }
+
+  function activateCategoryDialog(trigger) {
+    previousCategoryFocus =
+      trigger instanceof HTMLElement ? trigger : document.activeElement;
+    previousCategoryBodyOverflow = document.body.style.overflow;
+    inertedCategorySiblings = inertCategoryDialogBackground(categoryModal);
+
+    categoryModal.inert = false;
+    categoryModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    categoryModalClose.focus();
+  }
+
+  function deactivateCategoryDialog() {
+    categoryModal.setAttribute("aria-hidden", "true");
+    inertedCategorySiblings.forEach(([element, wasInert]) => {
+      element.inert = wasInert;
+    });
+    inertedCategorySiblings = [];
+    document.body.style.overflow = previousCategoryBodyOverflow;
+
+    if (previousCategoryFocus instanceof HTMLElement) {
+      previousCategoryFocus.focus();
+    }
+    previousCategoryFocus = null;
+  }
+
   if (
     catalogGrid &&
     categoryModal &&
+    categoryModalPanel &&
     categoryModalClose &&
     categoryModalOrder &&
     categoryModalGallery
@@ -1176,7 +1566,7 @@ const advantages = [
 
     let currentCategory = null;
 
-    function openCategoryModal(category) {
+    function openCategoryModal(category, trigger) {
       currentCategory = category;
 
       categoryModalTitle.textContent = category.title;
@@ -1203,9 +1593,7 @@ const advantages = [
       });
 
       categoryModal.classList.remove("hidden");
-      categoryModal.setAttribute("aria-hidden", "false");
-
-      document.body.classList.add("overflow-hidden");
+      activateCategoryDialog(trigger);
       if (categoryModalDiscount) {
   categoryModalDiscount.classList.toggle(
     "hidden",
@@ -1216,9 +1604,7 @@ const advantages = [
 
     function closeCategoryModal() {
       categoryModal.classList.add("hidden");
-      categoryModal.setAttribute("aria-hidden", "true");
-
-      document.body.classList.remove("overflow-hidden");
+      deactivateCategoryDialog();
 
       currentCategory = null;
     }
@@ -1233,20 +1619,46 @@ const advantages = [
       );
 
       if (category) {
-        openCategoryModal(category);
+        openCategoryModal(category, card);
       }
     });
 
     categoryModalClose.addEventListener("click", closeCategoryModal);
 
-    categoryModalBackdrop.addEventListener("click", closeCategoryModal);
+    categoryModal.addEventListener("click", (event) => {
+      if (
+        event.target === categoryModalBackdrop ||
+        !categoryModalPanel.contains(event.target)
+      ) {
+        closeCategoryModal();
+      }
+    });
 
     document.addEventListener("keydown", (event) => {
       if (
         event.key === "Escape" &&
         !categoryModal.classList.contains("hidden")
       ) {
+        event.preventDefault();
         closeCategoryModal();
+        return;
+      }
+
+      if (
+        event.key === "Tab" &&
+        !categoryModal.classList.contains("hidden")
+      ) {
+        const focusable = categoryModalFocusableElements();
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
       }
     });
 
@@ -1275,16 +1687,137 @@ const advantages = [
   }
 </script>
 
+<script>
+  (() => {
+    const ambientGroups = [
+      Array.from(document.querySelectorAll("#catalog-grid .catalog-wave-label")),
+      Array.from(document.querySelectorAll(".title-wave-label")),
+    ].filter((group) => group.length > 0);
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const activeIndices = ambientGroups.map(() => -1);
+    let ambientTimer = null;
+
+    function activateCurrent() {
+      ambientGroups.forEach((labels, groupIndex) => {
+        if (activeIndices[groupIndex] < 0) activeIndices[groupIndex] = 0;
+        labels[activeIndices[groupIndex]].classList.add("is-wave-active");
+      });
+    }
+
+    function stopCycle() {
+      if (ambientTimer !== null) {
+        window.clearInterval(ambientTimer);
+        ambientTimer = null;
+      }
+
+      ambientGroups.forEach((labels) =>
+        labels.forEach((label) => label.classList.remove("is-wave-active"))
+      );
+    }
+
+    function startCycle() {
+      if (
+        ambientGroups.length === 0 ||
+        ambientTimer !== null ||
+        reducedMotion.matches ||
+        document.hidden
+      ) return;
+
+      activateCurrent();
+
+      ambientTimer = window.setInterval(() => {
+        ambientGroups.forEach((labels, groupIndex) => {
+          labels[activeIndices[groupIndex]].classList.remove("is-wave-active");
+          activeIndices[groupIndex] =
+            (activeIndices[groupIndex] + 1) % labels.length;
+          labels[activeIndices[groupIndex]].classList.add("is-wave-active");
+        });
+      }, 3000);
+    }
+
+    const advantageWaveTitles = Array.from(
+      document.querySelectorAll(".advantage-wave-title")
+    );
+    const shimmerSequence = [
+      { element: document.querySelector(".hero-title-shimmer"), duration: 1400 },
+      { element: document.querySelector(".hero-shimmer-button"), duration: 1000 },
+      { element: document.querySelector(".hero-outline-shimmer-button"), duration: 1000 },
+      { element: document.querySelector("#catalog .sequence-wave-title"), duration: 1350 },
+      {
+        element: document.querySelector(
+          ".paper-section[data-paper-layer='3'] .sequence-wave-title"
+        ),
+        duration: 1350,
+      },
+      ...advantageWaveTitles.map((element) => ({ element, duration: 1000 })),
+      { element: document.querySelector("#works .sequence-wave-title"), duration: 1350 },
+    ].filter(({ element }) => element);
+    let shimmerTimer = null;
+
+    function stopShimmerSequence() {
+      if (shimmerTimer !== null) {
+        window.clearTimeout(shimmerTimer);
+        shimmerTimer = null;
+      }
+
+      shimmerSequence.forEach(({ element }) =>
+        element.classList.remove("is-wave-active")
+      );
+    }
+
+    function playShimmerStep(index) {
+      const { element, duration } = shimmerSequence[index];
+      if (!element || reducedMotion.matches || document.hidden) return;
+
+      element.classList.add("is-wave-active");
+      shimmerTimer = window.setTimeout(() => {
+        element.classList.remove("is-wave-active");
+        const isLastStep = index === shimmerSequence.length - 1;
+        const pause = isLastStep ? 3000 : 300;
+
+        shimmerTimer = window.setTimeout(() => {
+          shimmerTimer = null;
+          playShimmerStep(isLastStep ? 0 : index + 1);
+        }, pause);
+      }, duration);
+    }
+
+    function startShimmerSequence() {
+      if (
+        shimmerTimer !== null ||
+        shimmerSequence.length === 0 ||
+        reducedMotion.matches ||
+        document.hidden
+      ) return;
+
+      playShimmerStep(0);
+    }
+
+    function syncAnimations() {
+      stopCycle();
+      startCycle();
+      stopShimmerSequence();
+      startShimmerSequence();
+    }
+
+    document.addEventListener("visibilitychange", syncAnimations);
+    reducedMotion.addEventListener("change", syncAnimations);
+    startCycle();
+    startShimmerSequence();
+  })();
+</script>
+
 <!-- Floating contact buttons -->
 <div
-  class="fixed right-3 top-1/2 z-50 flex -translate-y-1/2 flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/70 shadow-2xl backdrop-blur-md sm:right-4"
+  class="fixed bottom-3 right-3 z-50 flex translate-y-0 flex-row overflow-hidden rounded-2xl border border-white/10 bg-black/70 shadow-2xl backdrop-blur-md sm:bottom-auto sm:right-4 sm:top-1/2 sm:-translate-y-1/2 sm:flex-col"
 >
   <!-- Phone -->
   <a
     href="tel:+79143000818"
     aria-label="Позвонить"
     title="Позвонить"
-    class="flex h-11 w-11 items-center justify-center border-b border-white/10 text-white transition-all duration-200 hover:scale-110 hover:bg-white/10 hover:text-brand-accent sm:h-12 sm:w-12"
+    class="flex h-11 w-11 items-center justify-center border-r border-white/10 text-white transition-all duration-200 hover:scale-110 hover:bg-white/10 hover:text-brand-accent sm:h-12 sm:w-12 sm:border-b sm:border-r-0"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -1321,7 +1854,7 @@ const advantages = [
     rel="noopener noreferrer"
     aria-label="Написать в WhatsApp"
     title="WhatsApp"
-    class="flex h-11 w-11 items-center justify-center border-b border-white/10 text-white transition-all duration-200 hover:scale-110 hover:bg-white/10 hover:text-brand-accent sm:h-12 sm:w-12"
+    class="flex h-11 w-11 items-center justify-center border-r border-white/10 text-white transition-all duration-200 hover:scale-110 hover:bg-white/10 hover:text-brand-accent sm:h-12 sm:w-12 sm:border-b sm:border-r-0"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
