@@ -777,6 +777,7 @@ select:focus-visible {
 
 /* Floating contact panel */
 .quick-contact-panel {
+  position: fixed;
   background: rgb(34 35 35 / 0.82);
   border-color: rgb(196 132 92 / 0.3);
   box-shadow:
@@ -784,7 +785,13 @@ select:focus-visible {
     inset 0 1px 0 rgb(255 255 255 / 0.06);
   -webkit-backdrop-filter: blur(14px) saturate(125%);
   backdrop-filter: blur(14px) saturate(125%);
-  animation: quick-contact-enter 650ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+
+@media (max-width: 639px) {
+  .quick-contact-panel {
+    right: max(0.75rem, calc(env(safe-area-inset-right, 0px) + 0.75rem));
+    bottom: max(0.75rem, calc(env(safe-area-inset-bottom, 0px) + 0.75rem));
+  }
 }
 
 .quick-contact-link {
@@ -877,23 +884,7 @@ select:focus-visible {
   }
 }
 
-@keyframes quick-contact-enter {
-  from {
-    opacity: 0;
-    translate: 16px 0;
-  }
-
-  to {
-    opacity: 1;
-    translate: 0 0;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .quick-contact-panel {
-    animation: none;
-  }
-
   .quick-contact-link,
   .quick-contact-icon,
   .quick-contact-tooltip,
