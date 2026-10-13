@@ -138,7 +138,10 @@ const advantages = [
       content="ПрофиСталь 14 — изготовление изделий и конструкций из металла на заказ в Якутске."
     />
     <title>ПрофиСталь 14 — изделия из металла на заказ</title>
-    <link rel="icon" type="image/png" href={`/favicon.png`} />
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href={`/favicon.ico?v=ps14-2`} />
+    <link rel="icon" type="image/png" sizes="180x180" href={`/favicon.png?v=ps14-2`} />
+    <link rel="icon" type="image/svg+xml" sizes="any" href={`/favicon.svg?v=ps14-2`} />
+    <link rel="icon" type="image/svg+xml" sizes="any" href={`/favicon-animated.svg?v=ps14-2`} />
   </head>
 
   <body class="bg-brand-bg text-brand-text antialiased">
@@ -1084,11 +1087,13 @@ const advantages = [
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="grid min-w-0 gap-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr_1.2fr] lg:gap-16">
           <div class="min-w-0">
-            <img
-              src={`/profistal14_logo.webp`}
-              alt="ПрофиСталь 14"
-              class="h-auto w-[150px] object-contain sm:w-[170px]"
-            />
+            <span class="footer-logo-shimmer w-[150px] sm:w-[170px]">
+              <img
+                src={`/profistal14_logo.webp`}
+                alt="ПрофиСталь 14"
+                class="block h-auto w-full object-contain"
+              />
+            </span>
             <p class="mt-3 text-sm text-white/70">Изделия из металла на заказ</p>
             <p class="mt-1 text-sm text-white/50">Якутск</p>
           </div>
