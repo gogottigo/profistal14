@@ -840,7 +840,6 @@ const advantages = [
     <path class="about-drawing-line about-drawing-line-copper about-drawing-line-delay-long" pathLength="1" d="M122 842h286l46 46v30h-72v-28H218v28h-96z" />
     <g class="about-mobile-drawing-lines">
       <path class="about-drawing-line about-drawing-line-copper" pathLength="1" d="M710 42h154l24 24v38h-28V78H738v26h-28z" />
-      <path class="about-drawing-line about-drawing-line-gray about-drawing-line-delay" pathLength="1" d="M724 918h158v38h-30v-16H754v16h-30z" />
     </g>
   </svg>
 
@@ -854,7 +853,7 @@ const advantages = [
           О компании
         </p>
 
-        <h2 class="about-heading wave-label title-wave-label text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+        <h2 class="wave-label title-wave-label text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
           <span class="title-wave-line">ОТ ИДЕИ<span class="title-wave-highlight" aria-hidden="true">ОТ ИДЕИ</span></span>
           <span class="title-wave-line">ДО РЕАЛИЗАЦИИ<span class="title-wave-highlight" aria-hidden="true">ДО РЕАЛИЗАЦИИ</span></span>
         </h2>
@@ -1747,20 +1746,6 @@ const advantages = [
     ].filter((group) => group.length > 0);
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    const aboutSection = document.querySelector("#about");
-    if (aboutSection && !reducedMotion.matches && "IntersectionObserver" in window) {
-      aboutSection.classList.add("about-motion-ready");
-      const aboutObserver = new IntersectionObserver((entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          aboutSection.classList.add("about-is-visible");
-          aboutObserver.unobserve(aboutSection);
-          aboutObserver.disconnect();
-        }
-      }, { threshold: 0.12 });
-
-      aboutObserver.observe(aboutSection);
-    }
 
     const activeIndices = ambientGroups.map(() => -1);
     let ambientTimer = null;
