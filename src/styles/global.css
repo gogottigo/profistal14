@@ -794,6 +794,17 @@ select:focus-visible {
   }
 }
 
+/* Avoid Firefox Android repaint jitter from backdrop-filter on fixed layers. */
+@supports (-moz-appearance: none) {
+  @media (max-width: 639px) {
+    .quick-contact-panel {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      background: rgb(34 35 35 / 0.96);
+    }
+  }
+}
+
 .quick-contact-link {
   position: relative;
   isolation: isolate;
